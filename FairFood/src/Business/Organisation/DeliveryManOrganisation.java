@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author ashwin
  */
-public class DeliveryManOrganisation {
+public class DeliveryManOrganisation extends Organisation{
     public DeliveryManOrganisation() {
         super(Organisation.Type.DeliveryMan.getValue());
     }
