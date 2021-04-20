@@ -5,10 +5,50 @@
  */
 package Business.Enterprise;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author truptiraut
  */
 public class EnterpriseDirectory {
     
+private ArrayList<Enterprise> enterpriseList;
+
+    public EnterpriseDirectory() {
+        enterpriseList = new ArrayList<>();
+    }
+
+    public ArrayList<Enterprise> getEnterpriseList() {
+        return enterpriseList;
+    }
+  
+   public Enterprise createAndAddEnterprise(String name, Enterprise.EnterpriseType type) {
+        Enterprise enterprise = null;
+        if (null != type) {
+            switch (type) {
+                case GroceryStore:
+                    enterprise = new GroceryStoreEnterprise(name);
+                    enterpriseList.add(enterprise);
+                    break;
+                case NGO:
+                    enterprise = new NGOEnterprise(name);
+                    enterpriseList.add(enterprise);
+                    break;
+                case QualityAssurance:
+                    enterprise = new QualityAssuranceEnterprise(name);
+                    enterpriseList.add(enterprise);
+                    break;
+                case Transport:
+                    enterprise = new TransportEnterprise(name);
+                    enterpriseList.add(enterprise);
+                    break;
+                default:
+                    break;
+            }
+        }
+        return enterprise;
+    }
 }
+
+
