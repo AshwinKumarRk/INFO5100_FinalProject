@@ -5,10 +5,18 @@
  */
 package Business.Enterprise;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ashwin
  */
-public class GroceryStoreEnterprise {
-    
+public class GroceryStoreEnterprise extends Enterprise{
+    public GroceryStoreEnterprise (String name) {
+        super(name, Enterprise.EnterpriseType.GroceryStore);
+    }
+
+    public ArrayList<Role> getSupportedRole() {
+        return null;
+    }
 }

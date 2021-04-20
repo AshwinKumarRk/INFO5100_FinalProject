@@ -5,10 +5,20 @@
  */
 package Business.Enterprise;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ashwin
  */
 public class TransportEnterprise {
+    public TransportEnterprise(String name){
+        super(name, Enterprise.EnterpriseType.Transport);
+    }
     
+    @Override
+    
+     public ArrayList<Role> getSupportedRole() {
+        return null;
+    }
 }
