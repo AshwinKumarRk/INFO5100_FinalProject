@@ -5,10 +5,41 @@
  */
 package Business.GroceryStore;
 
+import Business.Product.Product;
+import java.util.ArrayList;
+
+
 /**
  *
  * @author ashwin
  */
 public class GroceryStore {
+    String productName;
+    String productType;
     
+
+
+    public String getItemName() {
+        return productName;
+    }
+
+    public void setItemName(String ProductName) {
+        this.productName = ProductName;
+    }
+
+    
+
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setItemType(String productType) {
+        this.productType = productType;
+    }
+    
+    
+      @Override
+        public String toString(){
+        return productName;
+    }
 }
