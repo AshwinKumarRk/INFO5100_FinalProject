@@ -5,10 +5,22 @@
  */
 package Business.Enterprise;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author truptiraut
  */
-public class NGOEnterprise {
+public class NGOEnterprise extends Enterprise {
+    public NGOEnterprise(String name) {
+        super(name, Enterprise.EnterpriseType.NGO);
+    }
+
+    public ArrayList<Role> getSupportedRole() {
+        return null;
+    }
+
+
+
     
 }
