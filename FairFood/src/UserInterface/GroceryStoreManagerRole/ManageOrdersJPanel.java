@@ -28,8 +28,6 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private UserAccount userAccount;
      private EcoSystem system;
-
-  //  private UserAccount account;
     
    
     /**
@@ -42,8 +40,6 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         this.enterprise=enterprise;
         this.userAccount=userAccount;
         
-//        ManageOrderTable.getTableHeader().setDefaultRenderer(new tableHeaderColors());
-//        itemListTbl.getTableHeader().setDefaultRenderer(new tableHeaderColors());
         this.system=system;
         
         populateTable();

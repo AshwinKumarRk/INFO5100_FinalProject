@@ -140,13 +140,9 @@ public class ManagerStockJPanel extends javax.swing.JPanel {
        
         
         String name = ProductNameText.getText();
-//        String type = (String) typeComboBox.getSelectedItem();
-//       Date date = DateField.getText();
- //Date date=new SimpleDateFormat("dd/MM/yyyy").parse();  
         Products p = enterprise.createMenuItem();
         p.setProductName(name);
       
-       // p.setExpires(date);
         JOptionPane.showMessageDialog(null, "Item Added Successfully!","Success",JOptionPane.INFORMATION_MESSAGE);
         populateTable();
         ProductNameText.setText("");
