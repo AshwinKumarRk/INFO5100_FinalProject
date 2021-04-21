@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author truptiraut
+ * @author ashwin
  */
 public class ManagerStockJPanel extends javax.swing.JPanel {
      private JPanel userProcessContainer;
