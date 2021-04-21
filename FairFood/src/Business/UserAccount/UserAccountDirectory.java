@@ -5,10 +5,74 @@
  */
 package Business.UserAccount;
 
+import Business.Employee.Employee;
+import Business.GroceryStore.GroceryStore;
+import static Business.Organisation.Organisation.Type.GroceryStore;
+import Business.Role.Role;
+import java.util.ArrayList;
+import Business.Receiver.Receiver;
 /**
  *
  * @author visha
  */
 public class UserAccountDirectory {
+    
+    private ArrayList<UserAccount> userAccountList;
+
+    public UserAccountDirectory() {
+        userAccountList = new ArrayList();
+    }
+
+    public ArrayList<UserAccount> getUserAccountList() {
+        return userAccountList;
+    }
+    
+    public UserAccount authenticateUser(String username, String password){
+        for (UserAccount ua : userAccountList)
+            if (ua.getUsername().equals(username) && ua.getPassword().equals(password)){
+                return ua;
+            }
+        return null;
+    }
+    
+    public UserAccount createUserAccount(String username, String password, Employee employee, Role role){
+        UserAccount userAccount = new UserAccount();
+        userAccount.setUsername(username);
+        userAccount.setPassword(password);
+        userAccount.setEmployee(employee);
+        userAccount.setRole(role);
+        userAccountList.add(userAccount);
+        return userAccount;
+    }
+    
+    
+    public UserAccount createReceiverAccount(String username, String password, Receiver receiver, Role role)
+    {
+      UserAccount userAccount = new UserAccount();
+        userAccount.setUsername(username);
+        userAccount.setPassword(password);
+        userAccount.setReceiver(receiver);
+        userAccount.setRole(role);
+        userAccountList.add(userAccount);
+        return userAccount;  
+    }
+    
+      public void removeUserAccount(UserAccount ua){
+        userAccountList.remove(ua);
+    }
+    // Update User Account
+    public UserAccount updateUserAccount(UserAccount userAccount, String password){
+        userAccount.setPassword(password);
+        return userAccount;
+    }
+    
+   
+    public boolean checkIfUsernameIsUnique(String username){
+        for (UserAccount ua : userAccountList){
+            if (ua.getUsername().equals(username))
+                return false;
+        }
+        return true;
+    }
     
 }

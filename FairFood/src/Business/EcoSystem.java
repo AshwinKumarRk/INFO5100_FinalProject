@@ -27,7 +27,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author ashwin
+ * @author visha
  */
 public class EcoSystem extends Organisation{
       private static EcoSystem business;
