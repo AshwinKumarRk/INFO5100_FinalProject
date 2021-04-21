@@ -7,25 +7,26 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Network.Network;
 import Business.Organisation.Organisation;
+import Business.Product.FoodStock;
+import Business.Product.ProductInfoList;
 import Business.UserAccount.UserAccount;
-import UserInterface.DeliveryPerson.DeliveryManagerJPanel;
-import UserInterface.DeliveryPerson.DeliveryManWorkAreaJPanel;
+import UserInterface.Receiver.FoodOrderJPanel;
 import javax.swing.JPanel;
 
 /**
  *
- * @author ashwin
+ * @author visha
  */
-public class DeliveryMan extends Role{
-       @Override
+public class RecieverRole {
+    
      public String toString()
     {
-        return "DeliveryManager";
+        return "Receiver";
     }
 
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organisation organisation, Enterprise enterprise, EcoSystem system, ProductInfoList productInfoList, FoodStock foodstock) {
-        return new DeliveryManagerJPanel(userProcessContainer,account, organisation,enterprise);
+        return new FoodOrderJPanel(userProcessContainer, account, organisation, enterprise, system);
     }
+    
 }

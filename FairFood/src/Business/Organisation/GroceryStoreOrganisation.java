@@ -5,10 +5,26 @@
  */
 package Business.Organisation;
 
+import Business.Role.GroceryStoreManager;
+import Business.Role.DeliveryMan;
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author ashwin
  */
-public class GroceryStoreOrganisation {
-    
+public class GroceryStoreOrganisation extends Organisation{
+    public GroceryStoreOrganisation() {
+        super(Organisation.Type.GroceryStore.getValue());
+    }
+            
+
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList<>();
+       roles.add(new GroceryStoreManager());
+       return roles;    
+
+}
 }
