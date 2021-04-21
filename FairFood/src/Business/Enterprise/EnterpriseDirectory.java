@@ -31,8 +31,8 @@ private ArrayList<Enterprise> enterpriseList;
                     enterprise = new GroceryStoreEnterprise(name);
                     enterpriseList.add(enterprise);
                     break;
-                case NGO:
-                    enterprise = new NGOEnterprise(name);
+               case CommunityFridge:
+                    enterprise = new CommunityFridgeEnterprise(name);
                     enterpriseList.add(enterprise);
                     break;
                 case QualityAssurance:
