@@ -5,10 +5,21 @@
  */
 package Business.Enterprise;
 
+//import Business.Role.Inspector;
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author visha
  */
-public class QualityAssuranceEnterprise {
+public class QualityAssuranceEnterprise extends Enterprise{
+    public QualityAssuranceEnterprise(String name){
+        super(name, Enterprise.EnterpriseType.QualityAssurance);
+    }
     
+    @Override
+      public ArrayList<Role> getSupportedRole() {
+        return null;
+    }
 }
