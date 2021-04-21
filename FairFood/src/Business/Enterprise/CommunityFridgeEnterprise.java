@@ -5,21 +5,21 @@
  */
 package Business.Enterprise;
 
+import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
  *
  * @author truptiraut
  */
-public class NGOEnterprise extends Enterprise {
-    public NGOEnterprise(String name) {
-        super(name, Enterprise.EnterpriseType.NGO);
+public class CommunityFridgeEnterprise  extends Enterprise{
+     public CommunityFridgeEnterprise (String name) {
+        super(name, Enterprise.EnterpriseType.GroceryStore);
     }
 
     public ArrayList<Role> getSupportedRole() {
         return null;
     }
-
 
 
     
