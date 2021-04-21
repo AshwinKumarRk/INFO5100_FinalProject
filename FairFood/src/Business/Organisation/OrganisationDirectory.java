@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Business.Organisation;
 
 import Business.Employee.EmployeeDirectory;
@@ -6,12 +11,6 @@ import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
 import Business.WorkQueue.WorkQueue;
 import java.util.ArrayList;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
@@ -33,37 +32,28 @@ public class OrganisationDirectory {
         this.organisationList = organisationList;
     }
     
-    public Organisation createOrganisation(Organisation.Type type)
+    public Organisation createOrganisation(Type type)
     {
         Organisation o = null;
-        if(type.getValue().equals(Organisation.Type.Inspector.getValue()))
-        {
-            o = new InspectorOrganisation();
-            organisationList.add(o);
-        }
-        else if(type.getValue().equals(Organisation.Type.Stock.getValue()))
-        {
-            o = new StockOrganisation();
-            organisationList.add(o);
-        }
-        else if(type.getValue().equals(Organisation.Type.GroceryStore.getValue()))
+        
+         if(type.getValue().equals(Type.GroceryStore.getValue()))
         {
             o = new GroceryStoreOrganisation();
             organisationList.add(o);
         }
-        else if(type.getValue().equals(Organisation.Type.Receiver.getValue()))
+        else if(type.getValue().equals(Type.Receiver.getValue()))
         {
             o = new ReceiverOrganisation();
             organisationList.add(o);
         }
-        else if(type.getValue().equals(Organisation.Type.DeliveryMan.getValue()))
+        else if(type.getValue().equals(Type.DeliveryMan.getValue()))
         {
             o = new DeliveryManOrganisation();
             organisationList.add(o);
         }
-          else if(type.getValue().equals(Organisation.Type.NGOManager.getValue()))
+          else if(type.getValue().equals(Type.CommunityFridge.getValue()))
         {
-            o = new NGOManagerOrganisation();
+            o = new CommunityFridgeOrganisation();
             organisationList.add(o);
         }
       

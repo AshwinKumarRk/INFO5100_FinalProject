@@ -5,6 +5,7 @@
  */
 package Business.Enterprise;
 
+import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  * @author ashwin
  */
 public class TransportEnterprise {
-    public TransportEnterprise(String name){
+     public TransportEnterprise(String name){
         super(name, Enterprise.EnterpriseType.Transport);
     }
     

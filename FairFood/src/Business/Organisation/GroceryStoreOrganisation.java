@@ -5,8 +5,8 @@
  */
 package Business.Organisation;
 
-import Business.Role.GroceryStoreManager;
 import Business.Role.DeliveryMan;
+import Business.Role.GroceryStoreManager;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author ashwin
  */
 public class GroceryStoreOrganisation extends Organisation{
-    public GroceryStoreOrganisation() {
+ public GroceryStoreOrganisation() {
         super(Organisation.Type.GroceryStore.getValue());
     }
             
@@ -27,4 +27,6 @@ public class GroceryStoreOrganisation extends Organisation{
        return roles;    
 
 }
+
+ 
 }
