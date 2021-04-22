@@ -5,7 +5,6 @@
  */
 package UserInterface;
 
-<<<<<<< HEAD
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
@@ -24,18 +23,12 @@ import javax.swing.JPanel;
 /**
  *
  * @author truptiraut
-=======
-/**
- *
- * @author visha
->>>>>>> 96d830f30a31dbb34437787fd3f6d464cad675e6
  */
 public class MainJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MainJFrame
      */
-<<<<<<< HEAD
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     EcoSystem system;
     UserAccount account;
@@ -49,12 +42,6 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
          system = dB4OUtil.retrieveSystem();
     }
-=======
-    public MainJFrame() {
-        initComponents();
-    }
-
->>>>>>> 96d830f30a31dbb34437787fd3f6d464cad675e6
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,9 +51,8 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< HEAD
-        MainjSplitPane = new javax.swing.JSplitPane();
-        leftJPanel = new javax.swing.JPanel();
+        SplitPane = new javax.swing.JSplitPane();
+        panel1 = new javax.swing.JPanel();
         loginButton = new javax.swing.JButton();
         userNameTextField = new javax.swing.JTextField();
         usernameJLabel = new javax.swing.JLabel();
@@ -75,13 +61,17 @@ public class MainJFrame extends javax.swing.JFrame {
         passwordTextField = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         SignUp = new javax.swing.JButton();
-        userProcessContainer = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        panel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.CardLayout());
 
-        MainjSplitPane.setDividerLocation(150);
-        MainjSplitPane.setDividerSize(21);
+        SplitPane.setDividerLocation(150);
+        SplitPane.setDividerSize(21);
+
+        panel1.setBackground(new java.awt.Color(186, 108, 44));
+        panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginButton.setText("Login");
         loginButton.addActionListener(new java.awt.event.ActionListener() {
@@ -89,12 +79,16 @@ public class MainJFrame extends javax.swing.JFrame {
                 loginButtonActionPerformed(evt);
             }
         });
+        panel1.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 104, -1));
+        panel1.add(userNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 127, -1));
 
-        usernameJLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        usernameJLabel.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
         usernameJLabel.setText("UserName");
+        panel1.add(usernameJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 132, 34));
 
-        passwordJLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        passwordJLabel.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
         passwordJLabel.setText("Password");
+        panel1.add(passwordJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 171, 132, 34));
 
         logoutButton.setText("Logout");
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
@@ -102,14 +96,18 @@ public class MainJFrame extends javax.swing.JFrame {
                 logoutButtonActionPerformed(evt);
             }
         });
+        panel1.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 104, -1));
 
         passwordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordTextFieldActionPerformed(evt);
             }
         });
+        panel1.add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 132, -1));
 
+        jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
         jLabel1.setText("New User?");
+        panel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 433, -1, -1));
 
         SignUp.setText("Sign Up");
         SignUp.addActionListener(new java.awt.event.ActionListener() {
@@ -117,102 +115,26 @@ public class MainJFrame extends javax.swing.JFrame {
                 SignUpActionPerformed(evt);
             }
         });
+        panel1.add(SignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 464, -1, -1));
 
-        javax.swing.GroupLayout leftJPanelLayout = new javax.swing.GroupLayout(leftJPanel);
-        leftJPanel.setLayout(leftJPanelLayout);
-        leftJPanelLayout.setHorizontalGroup(
-            leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(leftJPanelLayout.createSequentialGroup()
-                .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(leftJPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(userNameTextField)
-                            .addComponent(loginButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(usernameJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                            .addComponent(passwordJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(logoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(passwordTextField)))
-                    .addGroup(leftJPanelLayout.createSequentialGroup()
-                        .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(leftJPanelLayout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jLabel1))
-                            .addGroup(leftJPanelLayout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(SignUp)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        leftJPanelLayout.setVerticalGroup(
-            leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(leftJPanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(usernameJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(userNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addComponent(passwordJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(loginButton)
-                .addGap(18, 18, 18)
-                .addComponent(logoutButton)
-                .addGap(47, 47, 47)
-                .addComponent(jLabel1)
-                .addGap(43, 43, 43)
-                .addComponent(SignUp)
-                .addContainerGap(254, Short.MAX_VALUE))
-        );
+        SplitPane.setLeftComponent(panel1);
 
-        MainjSplitPane.setLeftComponent(leftJPanel);
+        panel2.setBackground(new java.awt.Color(215, 200, 174));
+        panel2.setForeground(new java.awt.Color(255, 204, 102));
+        panel2.setAutoscrolls(true);
+        panel2.setLayout(new java.awt.CardLayout());
 
-        userProcessContainer.setBackground(new java.awt.Color(255, 255, 255));
-        userProcessContainer.setForeground(new java.awt.Color(255, 204, 102));
-        userProcessContainer.setAutoscrolls(true);
-        userProcessContainer.setLayout(new java.awt.CardLayout());
-        userProcessContainer.add(jLabel3, "card2");
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Thanks.jpeg"))); // NOI18N
+        panel2.add(jLabel2, "card2");
 
-        MainjSplitPane.setRightComponent(userProcessContainer);
+        SplitPane.setRightComponent(panel2);
 
-=======
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
->>>>>>> 96d830f30a31dbb34437787fd3f6d464cad675e6
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addGap(0, 1423, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(MainjSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1423, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(MainjSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-=======
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
->>>>>>> 96d830f30a31dbb34437787fd3f6d464cad675e6
-        );
+        getContentPane().add(SplitPane, "card2");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
 
@@ -266,9 +188,9 @@ public class MainJFrame extends javax.swing.JFrame {
             return;
         }
         else{
-            CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-            userProcessContainer.add("workArea",userAccount.getRole().createWorkArea(userProcessContainer, enterprise, organisation,userAccount , system, network));
-            layout.next(userProcessContainer);
+            CardLayout layout=(CardLayout)panel2.getLayout();
+            panel2.add("workArea",userAccount.getRole().createWorkArea(panel2, enterprise, organisation,userAccount , system, network));
+            layout.next(panel2);
         }
         
         loginButton.setEnabled(false);
@@ -281,85 +203,30 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         // TODO add your handling code here:
+       
         logoutButton.setEnabled(false);
         userNameTextField.setEnabled(true);
         passwordTextField.setEnabled(true);
         loginButton.setEnabled(true);
-         SignUp.setVisible(true);
-
+        //orangeLbl.setEnabled(true);
+        SignUp.setVisible(true);
 
         userNameTextField.setText("");
         passwordTextField.setText("");
 
-        userProcessContainer.removeAll();
-        JPanel blankJP = new JPanel();
-        userProcessContainer.add("blank", blankJP);
-        CardLayout crdLyt = (CardLayout) userProcessContainer.getLayout();
-        crdLyt.next(userProcessContainer);
+        panel2.removeAll();
+       SplitPane.setLeftComponent(panel1);
 
-        dB4OUtil.storeSystem(system);
+        panel2.setLayout(new java.awt.CardLayout());
 
-        }
-    
-    /*
-     logoutJButton.setEnabled(false);
-        userNameJTextField.setEnabled(true);
-        passwordField.setEnabled(true);
-        loginJButton.setEnabled(true);
-        //orangeLbl.setEnabled(true);
-        registerBtn.setVisible(true);
-
-        userNameJTextField.setText("");
-        passwordField.setText("");
-
-        container.removeAll();
-       jSplitPane1.setLeftComponent(LeftJPanel);
-
-        container.setLayout(new java.awt.CardLayout());
-
-        orangeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/orangesBackground.jpg"))); // NOI18N
+        //orangeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/orangesBackground.jpg"))); // NOI18N
        
-        container.add(orangeLbl, "card2");
-        jSplitPane1.setRightComponent(container);
-        getContentPane().add(jSplitPane1, "card2");
+       // panel2.add(orangeLbl, "card2");
+        SplitPane.setRightComponent(panel2);
+        getContentPane().add(SplitPane, "card2");
         pack();
-        jSplitPane1.setDividerLocation(300);
-        dB4OUtil.storeSystem(system);*/
-
-        /**
-        * @param args the command line arguments
-        */
-        public static void main(String args[]) {
-            /* Set the Nimbus look and feel */
-            //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-            /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-            * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-            */
-            try {
-                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                    if ("Nimbus".equals(info.getName())) {
-                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                        break;
-                    }
-                }
-            } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            }
-            //</editor-fold>
-
-            /* Create and display the form */
-
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    new MainJFrame().setVisible(true);
-                }
-            });
+        SplitPane.setDividerLocation(300);
+        dB4OUtil.storeSystem(system);
 
     }//GEN-LAST:event_logoutButtonActionPerformed
 
@@ -370,97 +237,33 @@ public class MainJFrame extends javax.swing.JFrame {
     private void SignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpActionPerformed
         // TODO add your handling code here:
         System.out.println("user list  " + system.getUserAccountDirectory().getUserAccountList());
-        CreateNewReceiverJPanel createCus =new CreateNewReceiverJPanel(userProcessContainer, system);
-        userProcessContainer.add("SignUpJPanel",createCus);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        CreateNewReceiverJPanel createCus =new CreateNewReceiverJPanel(panel2, system);
+        panel2.add("SignUpJPanel",createCus);
+        CardLayout layout=(CardLayout)panel2.getLayout();
+        layout.next(panel2);
     }//GEN-LAST:event_SignUpActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new MainJFrame().setVisible(true);
-//            }
-//        });
-//    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JSplitPane MainjSplitPane;
-    private javax.swing.JButton SignUp;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel leftJPanel;
-    private javax.swing.JButton loginButton;
-    private javax.swing.JButton logoutButton;
-    private javax.swing.JLabel passwordJLabel;
-    private javax.swing.JPasswordField passwordTextField;
-    private javax.swing.JTextField userNameTextField;
-    private javax.swing.JPanel userProcessContainer;
-    private javax.swing.JLabel usernameJLabel;
-=======
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+public static void main(String args[]) {
+       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainJFrame().setVisible(true);
             }
         });
     }
-
+   
+//    
     // Variables declaration - do not modify//GEN-BEGIN:variables
->>>>>>> 96d830f30a31dbb34437787fd3f6d464cad675e6
+    private javax.swing.JButton SignUp;
+    private javax.swing.JSplitPane SplitPane;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton loginButton;
+    private javax.swing.JButton logoutButton;
+    private javax.swing.JPanel panel1;
+    private javax.swing.JPanel panel2;
+    private javax.swing.JLabel passwordJLabel;
+    private javax.swing.JPasswordField passwordTextField;
+    private javax.swing.JTextField userNameTextField;
+    private javax.swing.JLabel usernameJLabel;
     // End of variables declaration//GEN-END:variables
 }
