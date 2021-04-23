@@ -1,14 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package UserInterface.AdminRole;
 
 import Business.EcoSystem;
 import Business.Employee.Employee;
-import Business.Organisation.Organisation;
-import Business.Organization.OrganisationDirectory;
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -20,74 +19,70 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author truptiraut
+ * @author visha
  */
 public class ManageEmployeeJPanel extends javax.swing.JPanel {
-    
-    private JPanel userProcessContainer;
-    private Organisation org;
-    private OrganisationDirectory organisationDirectory;
-    private EcoSystem system;
-   // private boolean emailValid;
-    private boolean userNameValid;
-     private boolean  passwordValid;
 
+    private OrganizationDirectory organizationDir;
+    private JPanel userProcessContainer;
+    private Organization org;
+    private EcoSystem system;
+    private boolean ValidEmail;
+    private boolean NameValid;
+    private boolean  ValidPass;
+    
     /**
-     * Creates new form ManageEmployeeJPanel
+     * Creates new form ManageOrganizationJPanel
      */
-    public ManageEmployeeJPanel(JPanel userProcessContainer,OrganisationDirectory organisationDirectory,EcoSystem system) {
+    public ManageEmployeeJPanel(JPanel userProcessContainer,OrganizationDirectory organizationDir,EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.organisationDirectory = organisationDirectory;
+        this.organizationDir = organizationDir;
         this.system = system;
-        clearFields();
-        //organizationJTable.getTableHeader().setDefaultRenderer(new tableHeaderColors());
+        ClearVals();
         populateOrgComboBox();
         populateOrgEmpComboBox();
 
     }
-    /*
-      public void populateOrganizationEmployeeComboBox() {
-        organizationEmpJComboBox.removeAllItems();
-
-        for (Organization organization : organizationDirectory.getOrganizationList()) {
-            organizationEmpJComboBox.addItem(organization);
-        }
-    }*/
     
-     public void populateOrgComboBox(){
-        OrgComboBox.removeAllItems();
+    public void ClearVals(){
         
-        for (Organisation organisation : organisationDirectory.getOrganisationList()){
-            String o=organisation.toString();
-            OrgComboBox.addItem(o);
+        passlabel.setVisible(false);
+        emailexist.setVisible(false);
+        emailabel.setVisible(false);
+       
+        
+    }
+    public void populateOrgComboBox(){
+        OrgJCB.removeAllItems();
+        
+        for (Organization organization : organizationDir.getOrganizationList()){
+            OrgJCB.addItem(organization);
         }
     }
-     
-     public void populateOrgEmpComboBox(){
-        OrgEmpComboBox.removeAllItems();
+    
+    
+    public void populateOrgEmpComboBox(){
+        OrgCB.removeAllItems();
         
-        for (Organisation organisation : organisationDirectory.getOrganisationList()){
-             String o=organisation.toString();
-            OrgEmpComboBox.addItem(o);
+        for (Organization organization : organizationDir.getOrganizationList()){
+            OrgCB.addItem(organization);
         }
     }
-     
-      private void populateRoleComboBox(Organisation organisation){
-        RoleComboBox.removeAllItems();
-        for (Role role : organisation.getSupportedRole()){
+    
+    private void populateRoleComboBox(Organization organization){
+        RolesCB.removeAllItems();
+        for (Role role : organization.getSupportedRole()){
 
             String r = role.toString();
-            RoleComboBox.addItem(r);
+            RolesCB.addItem(role);
         }
     }
 
-       private void populateTable(Organisation organisation){
-        DefaultTableModel model = (DefaultTableModel) OrgTable.getModel();
-        
+    private void populateTable(Organization organization){
+        DefaultTableModel model = (DefaultTableModel) orgTable.getModel();
         model.setRowCount(0);
-        
-        for (UserAccount acc : organisation.getUserAccountDirectory().getUserAccountList()){
+        for (UserAccount acc : organization.getUserAccountDirectory().getUserAccountList()){
             Employee employee = acc.getEmployee();
             Object[] row = new Object[3];
             row[0] = employee.getId();
@@ -97,25 +92,17 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         
         }
     }
-    
-     public void clearFields(){
-        
-        passwordLbl.setVisible(false);
-        usernameLbl.setVisible(false);
-        
-    }
-     
-      private boolean usernamePatternCorrect(String val){
+    private boolean usernamePatternCorrect(String val){
         Pattern p=Pattern.compile("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
         Matcher m=p.matcher(val);
         boolean b=m.matches();
         return b;
     }
-      
-       private boolean passwordPatternCorrect(String val1){
+   
+    private boolean passwordPatternCorrect(String val4){
         Pattern p1;
         p1 = Pattern.compile("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$");
-        Matcher m1=p1.matcher(String.valueOf(val1));
+        Matcher m1=p1.matcher(String.valueOf(val4));
         boolean b1=m1.matches();
         return b1;
     }
@@ -128,289 +115,368 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Back = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        orgTable = new javax.swing.JTable();
+        OrgJCB = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        backJButton = new javax.swing.JButton();
+        OrgCB = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        RolesCB = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
+        UserNameF = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        create = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        OrgComboBox = new javax.swing.JComboBox<>();
-        RoleComboBox = new javax.swing.JComboBox<>();
-        NameField = new javax.swing.JTextField();
-        UserNameField = new javax.swing.JTextField();
-        PasswordField = new javax.swing.JTextField();
-        CreateBtn = new javax.swing.JButton();
+        remove = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        OrgEmpComboBox = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        OrgTable = new javax.swing.JTable();
-        usernameLbl = new javax.swing.JLabel();
-        passwordLbl = new javax.swing.JLabel();
-        Delete = new javax.swing.JButton();
+        Namef = new javax.swing.JTextField();
+        emailexist = new javax.swing.JLabel();
+        emailabel = new javax.swing.JLabel();
+        passlabel = new javax.swing.JLabel();
+        PassField = new javax.swing.JPasswordField();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Back.setText("jButton1");
-        Back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackActionPerformed(evt);
-            }
-        });
-        add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
-
-        jLabel1.setText("Add Employee");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, -1, -1));
-
-        jLabel2.setText("View Employee");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, -1, -1));
-
-        jLabel3.setText("Organisation");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
-
-        jLabel4.setText("Role");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 40, -1));
-
-        jLabel5.setText("Name");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, -1, -1));
-
-        jLabel6.setText("UserName");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
-
-        jLabel7.setText("Password");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, -1));
-
-        OrgComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(OrgComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, -1, -1));
-
-        RoleComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(RoleComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, -1));
-
-        NameField.setText("jTextField1");
-        add(NameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, -1));
-
-        UserNameField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                UserNameFieldKeyReleased(evt);
-            }
-        });
-        add(UserNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 70, -1));
-
-        PasswordField.setText("jTextField3");
-        PasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                PasswordFieldKeyReleased(evt);
-            }
-        });
-        add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, -1));
-
-        CreateBtn.setText("Create");
-        CreateBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CreateBtnActionPerformed(evt);
-            }
-        });
-        add(CreateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, -1, -1));
-
-        jLabel8.setText("Organisation");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, -1, -1));
-
-        OrgEmpComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        OrgEmpComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OrgEmpComboBoxActionPerformed(evt);
-            }
-        });
-        add(OrgEmpComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, -1, -1));
-
-        OrgTable.setModel(new javax.swing.table.DefaultTableModel(
+        orgTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null}
             },
             new String [] {
-                "ID", "NAME", "USERNAME"
+                "ID", "Name", "User Name"
             }
-        ));
-        jScrollPane1.setViewportView(OrgTable);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, 380, 90));
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-        usernameLbl.setText("username@gmail");
-        add(usernameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, -1, -1));
-
-        passwordLbl.setText("password@1");
-        add(passwordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, -1, -1));
-
-        Delete.setText("delete");
-        Delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteActionPerformed(evt);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
-        add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 510, -1, -1));
+        jScrollPane1.setViewportView(orgTable);
+        if (orgTable.getColumnModel().getColumnCount() > 0) {
+            orgTable.getColumnModel().getColumn(0).setResizable(false);
+            orgTable.getColumnModel().getColumn(1).setResizable(false);
+            orgTable.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 480, 170));
+
+        OrgJCB.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
+        OrgJCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        OrgJCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrgJCBActionPerformed(evt);
+            }
+        });
+        add(OrgJCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 190, 30));
+
+        jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel1.setText("Organization:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 120, 25));
+
+        backJButton.setBackground(new java.awt.Color(255, 255, 255));
+        backJButton.setFont(new java.awt.Font("PT Serif Caption", 1, 18)); // NOI18N
+        backJButton.setText("Back");
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
+            }
+        });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 31));
+
+        OrgCB.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        OrgCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        OrgCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrgCBActionPerformed(evt);
+            }
+        });
+        add(OrgCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 190, 30));
+
+        jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("Organization:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, 40));
+
+        jLabel4.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("Role:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 72, 40));
+
+        RolesCB.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        RolesCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        RolesCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RolesCBActionPerformed(evt);
+            }
+        });
+        add(RolesCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 190, 30));
+
+        jLabel5.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("User Name:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 90, 30));
+
+        UserNameF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserNameFActionPerformed(evt);
+            }
+        });
+        UserNameF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                UserNameFKeyReleased(evt);
+            }
+        });
+        add(UserNameF, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 190, 30));
+
+        jLabel6.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("Password:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 80, 20));
+
+        create.setBackground(new java.awt.Color(255, 255, 255));
+        create.setFont(new java.awt.Font("PT Serif Caption", 1, 18)); // NOI18N
+        create.setText("Create");
+        create.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createActionPerformed(evt);
+            }
+        });
+        add(create, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 87, 44));
+
+        jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(80, 80, 82));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Add Employees");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 302, 30));
+
+        jLabel7.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(80, 80, 82));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("View Employees");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 480, 31));
+
+        remove.setBackground(new java.awt.Color(255, 255, 255));
+        remove.setFont(new java.awt.Font("PT Serif Caption", 1, 18)); // NOI18N
+        remove.setText("Remove");
+        remove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeActionPerformed(evt);
+            }
+        });
+        add(remove, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 460, 113, 44));
+
+        jLabel8.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel8.setText("Name:");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 72, 30));
+
+        Namef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NamefActionPerformed(evt);
+            }
+        });
+        Namef.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NamefKeyReleased(evt);
+            }
+        });
+        add(Namef, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 190, 30));
+
+        emailexist.setFont(new java.awt.Font("PT Serif Caption", 1, 12)); // NOI18N
+        emailexist.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        emailexist.setText("EmailID already Exists");
+        add(emailexist, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 160, 20));
+
+        emailabel.setFont(new java.awt.Font("PT Serif Caption", 1, 12)); // NOI18N
+        emailabel.setText("'aa@aa.com'");
+        add(emailabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, 150, 20));
+
+        passlabel.setFont(new java.awt.Font("PT Serif Caption", 1, 12)); // NOI18N
+        passlabel.setText("Trgs@1");
+        add(passlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 120, 160, 20));
+
+        PassField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PassFieldKeyReleased(evt);
+            }
+        });
+        add(PassField, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 190, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
-        // TODO add your handling code here:
-          userProcessContainer.remove(this);
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_BackActionPerformed
+    }//GEN-LAST:event_backJButtonActionPerformed
 
-    private void CreateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateBtnActionPerformed
-        // TODO add your handling code here:
-        String userName = UserNameField.getText();
-        String password = PasswordField.getText();
-        //String name = txtName.getText();
+    private void OrgJCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrgJCBActionPerformed
+        org = (Organization) OrgJCB.getSelectedItem();
+        if (org != null){
+            populateTable(org);
+        }
+    }//GEN-LAST:event_OrgJCBActionPerformed
+
+    private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
+        String userName = UserNameF.getText();
+        String password = PassField.getText();
+        String name = Namef.getText();
         
-        Organisation organisation = (Organisation) OrgEmpComboBox.getSelectedItem();
-        
+        Organization organization = (Organization) OrgCB.getSelectedItem();
         Employee employee = new Employee();
-        employee.setName(NameField.getText());
-        
-        Role role = (Role) RoleComboBox.getSelectedItem();
+        employee.setName(Namef.getText());
+        Role role = (Role) RolesCB.getSelectedItem();
         
 
-        if(!UserNameField.getText().isEmpty() && !PasswordField.getText().isEmpty() && !NameField.getText().isEmpty()){
-            if(organisation.getEmployeeDirectory().checkIfUsernameIsUnique(userName)){
+        if(!UserNameF.getText().isEmpty() && !PassField.getText().isEmpty() && !Namef.getText().isEmpty()){
+            if(organization.getEmployeeDirectory().checkIfUsernameIsUnique(userName)){
                 if(usernamePatternCorrect(userName)){
-                    if(organisation.getUserAccountDirectory().checkIfUsernameIsUnique(userName)){
-                        organisation.getEmployeeDirectory().createEmployee(NameField.getText());
-                         organisation.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
-                        // organization.getUserAccountDirectory().createUserAccount(userName, password, role);
+                    if(organization.getUserAccountDirectory().checkIfUsernameIsUnique(userName)){
+                        organization.getEmployeeDirectory().createEmployee(Namef.getText());
+                         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
                          JOptionPane.showMessageDialog(null,"Employee created successfully");
-                         populateTable(organisation);
-                         UserNameField.setText("");
-                         PasswordField.setText("");
-                         NameField.setText("");
-                        
-                    }
+                         populateTable(organization);
+                         UserNameF.setText("");
+                         PassField.setText("");
+                         Namef.setText("");
+                         }
                     else{
-                        JOptionPane.showMessageDialog(null, "Username already exists", "Warning", JOptionPane.WARNING_MESSAGE);
-                        NameField.setText("");
+                        JOptionPane.showMessageDialog(null, "Username  exists", "Warning", JOptionPane.WARNING_MESSAGE);
+                        UserNameF.setText("");
                         return;
                     }
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "Email format emp@domain.com", "Warning", JOptionPane.WARNING_MESSAGE);
-                    NameField.setText("");
+                    JOptionPane.showMessageDialog(null, "Email format aaa@aaaa.com", "Warning", JOptionPane.WARNING_MESSAGE);
+                    UserNameF.setText("");
                     return;
                 }
             }
             else{
-                    JOptionPane.showMessageDialog(null, "Employee already exists", "Warning", JOptionPane.WARNING_MESSAGE);
-                    NameField.setText("");
+                    JOptionPane.showMessageDialog(null, "Employee  exists", "Warning", JOptionPane.WARNING_MESSAGE);
+                    Namef.setText("");
                     return;
             } 
         }
         else{
                 JOptionPane.showMessageDialog(null, "All fields must be entered", "Warning", JOptionPane.WARNING_MESSAGE);
-                NameField.setText("");
-        if(UserNameField.getText().isEmpty() && PasswordField.getText().isEmpty() && NameField.getText().isEmpty()){
+                Namef.setText("");
+        if(UserNameF.getText().isEmpty() && PassField.getText().isEmpty() && Namef.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "All fields must be entered", "Warning", JOptionPane.WARNING_MESSAGE);
 
                 return;
         }
-            if(userNameValid  && passwordValid){
-                organisation.getEmployeeDirectory().createEmployee(UserNameField.getText());
-                 organisation.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
-                 JOptionPane.showMessageDialog(null,"Employee created successfully","Success",JOptionPane.INFORMATION_MESSAGE);
-                 populateTable(organisation);
-                 UserNameField.setText("");
-                 PasswordField.setText("");
-                 NameField.setText("");
-                 clearFields();
+            if(NameValid  && ValidPass){
+                organization.getEmployeeDirectory().createEmployee(UserNameF.getText());
+                 organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+                 JOptionPane.showMessageDialog(null,"Employee created","Success",JOptionPane.INFORMATION_MESSAGE);
+                 populateTable(organization);
+                 UserNameF.setText("");
+                 PassField.setText("");
+                 Namef.setText("");
+                 ClearVals();
             }
         }   
-                                         
-    }//GEN-LAST:event_CreateBtnActionPerformed
+    }//GEN-LAST:event_createActionPerformed
 
-    private void OrgEmpComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrgEmpComboBoxActionPerformed
-        // TODO add your handling code here:
-         Organisation organisation = (Organisation) OrgEmpComboBox.getSelectedItem();
-        if (organisation != null){
-            //populateEmployeeComboBox(organization);
-            populateRoleComboBox(organisation);
+    private void OrgCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrgCBActionPerformed
+        Organization organization = (Organization) OrgCB.getSelectedItem();
+        if (organization != null){
+            populateRoleComboBox(organization);
         }
-    }//GEN-LAST:event_OrgEmpComboBoxActionPerformed
-
-    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
         // TODO add your handling code here:
-         int row = OrgTable.getSelectedRow();
+    }//GEN-LAST:event_OrgCBActionPerformed
+
+    private void UserNameFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UserNameFKeyReleased
+
+        // TODO add your handling code here:
+        Organization organization = (Organization) OrgCB.getSelectedItem();
+        if(!usernamePatternCorrect(UserNameF.getText()) && !(UserNameF.getText().isEmpty())){
+            emailabel.setVisible(true);
+            NameValid = false;
+        }else if(!organization.getUserAccountDirectory().checkIfUsernameIsUnique(UserNameF.getText())){
+           emailabel.setVisible(false);
+            NameValid = false;
+
+        }else if(UserNameF.getText().isEmpty()){
+           emailabel.setVisible(false);
+            NameValid = false;
+        }else {
+            emailabel.setVisible(false);
+            NameValid = true;
+        }
+    }//GEN-LAST:event_UserNameFKeyReleased
+
+    private void UserNameFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UserNameFActionPerformed
+
+    private void removeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeActionPerformed
+        int row = orgTable.getSelectedRow();
 
         if(row<0) {
-            JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a row first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        Employee e1 = (Employee)OrgTable.getValueAt(row, 1);
-        UserAccount ua = (UserAccount)OrgTable.getValueAt(row, 2);
+        Employee e1 = (Employee)orgTable.getValueAt(row, 1);
+        UserAccount ua = (UserAccount)orgTable.getValueAt(row, 2);
         org.getEmployeeDirectory().removeEmployee(e1);
         org.getUserAccountDirectory().removeUserAccount(ua);
         populateTable(org);
-    }//GEN-LAST:event_DeleteActionPerformed
-
-    private void UserNameFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UserNameFieldKeyReleased
         // TODO add your handling code here:
-        
-         Organisation organisation = (Organisation) OrgEmpComboBox.getSelectedItem();
-        if(!usernamePatternCorrect(UserNameField.getText()) && !(UserNameField.getText().isEmpty())){
-           
-            usernameLbl.setVisible(true);
-            userNameValid = false;
-        }else if(!organisation.getUserAccountDirectory().checkIfUsernameIsUnique(UserNameField.getText())){
-           
-            usernameLbl.setVisible(false);
-            userNameValid = false;
+    }//GEN-LAST:event_removeActionPerformed
 
-        }else if(UserNameField.getText().isEmpty()){
-            
-            usernameLbl.setVisible(false);
-            userNameValid = false;
-        }else {
-           
-           usernameLbl.setVisible(false);
-            userNameValid = true;
-        }
-    }//GEN-LAST:event_UserNameFieldKeyReleased
-
-    private void PasswordFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordFieldKeyReleased
+    private void NamefKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NamefKeyReleased
         // TODO add your handling code here:
-          if(!passwordPatternCorrect(PasswordField.getText()) && !(PasswordField.getText().isEmpty())){
-           
-            passwordLbl.setVisible(true);
-        }else if(PasswordField.getText().isEmpty()){
-            passwordLbl.setVisible(false);
-           
+       
+    }//GEN-LAST:event_NamefKeyReleased
+
+    private void NamefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamefActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NamefActionPerformed
+
+    private void PassFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PassFieldKeyReleased
+        // TODO add your handling code here:
+         if(!passwordPatternCorrect(PassField.getText()) && !(PassField.getText().isEmpty())){
+           passlabel.setVisible(true);
+        }else if(PassField.getText().isEmpty()){
+            passlabel.setVisible(false);
         }else{
-            passwordLbl.setVisible(false);
-          
+            passlabel.setVisible(false);
+           
         }
-    }//GEN-LAST:event_PasswordFieldKeyReleased
+    }//GEN-LAST:event_PassFieldKeyReleased
 
-
+    private void RolesCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RolesCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RolesCBActionPerformed
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Back;
-    private javax.swing.JButton CreateBtn;
-    private javax.swing.JButton Delete;
-    private javax.swing.JTextField NameField;
-    private javax.swing.JComboBox<String> OrgComboBox;
-    private javax.swing.JComboBox<String> OrgEmpComboBox;
-    private javax.swing.JTable OrgTable;
-    private javax.swing.JTextField PasswordField;
-    private javax.swing.JComboBox<String> RoleComboBox;
-    private javax.swing.JTextField UserNameField;
+    private javax.swing.JTextField Namef;
+    private javax.swing.JComboBox OrgCB;
+    private javax.swing.JComboBox OrgJCB;
+    private javax.swing.JPasswordField PassField;
+    private javax.swing.JComboBox RolesCB;
+    private javax.swing.JTextField UserNameF;
+    private javax.swing.JButton backJButton;
+    private javax.swing.JButton create;
+    private javax.swing.JLabel emailabel;
+    private javax.swing.JLabel emailexist;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -420,7 +486,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel passwordLbl;
-    private javax.swing.JLabel usernameLbl;
+    private javax.swing.JTable orgTable;
+    private javax.swing.JLabel passlabel;
+    private javax.swing.JButton remove;
     // End of variables declaration//GEN-END:variables
 }
