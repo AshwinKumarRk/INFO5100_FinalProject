@@ -5,30 +5,23 @@
  */
 package Business.Organization;
 
+import Business.Role.FoodSafetyOfficer;
 import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
  *
- * @author truptiraut
+ * @author ashwin
  */
-public class ReceiverOrganisation extends Organisation {
-    public ReceiverOrganisation() {
-        super(Organisation.Type.Receiver.getValue());
+public class FoodSafetyOrganization extends Organization {
+    public FoodSafetyOrganization() {
+        super(Type.FoodSafetyOrganization.getValue());
     }
-
     @Override
     public ArrayList<Role> getSupportedRole() {
-       ArrayList<Role> roles = new ArrayList<>();
-       roles.add(new ReceiverRole());
-       
-
-       return roles;    
-
-}
-
-  
-
-}
-
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new FoodSafetyOfficer());
+        return roles;
+    }  
     
+}
