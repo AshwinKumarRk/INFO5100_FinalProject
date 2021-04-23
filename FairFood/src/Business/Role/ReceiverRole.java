@@ -8,20 +8,20 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organisation.Organisation;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import UserInterface.Receiver.ReceiverWorkAreaJPanel;
 
 /**
  *
- * @author truptiraut
+ * @author ashwin
  */
-public class ReceiverRole extends Role{
-
+public class ReceiverRole extends Role {
     
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, Enterprise enterprise, Organisation organisation, UserAccount account, EcoSystem system, Network network) {
-        return new ReceiverWorkAreaJPanel(userProcessContainer, enterprise, organisation, account, system, network);
+    public JPanel createWorkArea(JPanel userProcessContainer, Enterprise enterprise, Organization organization, UserAccount account, EcoSystem business, Network network) {
+        return new ReceiverWorkAreaJPanel(userProcessContainer, enterprise, organization, account, business, network);
     }
     
 }
