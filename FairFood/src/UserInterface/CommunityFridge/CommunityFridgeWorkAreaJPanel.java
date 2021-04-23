@@ -194,7 +194,7 @@ public class CommunityFridgeWorkAreaJPanel extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tomatoes.jpeg"))); // NOI18N
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 740));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1820, 1110));
     }// </editor-fold>//GEN-END:initComponents
 
     private void ApprovedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApprovedActionPerformed

@@ -77,6 +77,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         refresh = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(214, 236, 254));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Deliveries.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
