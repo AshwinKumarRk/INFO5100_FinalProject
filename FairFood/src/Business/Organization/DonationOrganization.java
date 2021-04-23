@@ -4,27 +4,25 @@
  * and open the template in the editor.
  */
 package Business.Organization;
-
-import Business.Role.DonationManager;
 import Business.Role.Role;
+import Business.Role.DonationManagerRole;
 import java.util.ArrayList;
 
 /**
  *
- * @author truptiraut
+ * @author visha
  */
-public class DonationOrganisation extends Organisation {
+public class DonationOrganization extends Organization {
 
-    public DonationOrganisation() {
-        super(Type.Donation.getValue());
+    public DonationOrganization() {
+        super(Organization.Type.DonationOrganization.getValue());
     }
     
-     @Override
+    @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new DonationManager());
+        roles.add(new DonationManagerRole());
         return roles;
     }
-     
     
 }
