@@ -57,6 +57,7 @@ private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         container = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -64,7 +65,7 @@ private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
         jSplitPane1.setDividerLocation(300);
         jSplitPane1.setMaximumSize(new java.awt.Dimension(1754, 724));
 
-        LeftJPanel.setBackground(new java.awt.Color(255, 255, 255));
+        LeftJPanel.setBackground(new java.awt.Color(214, 177, 147));
         LeftJPanel.setMaximumSize(new java.awt.Dimension(467, 722));
         LeftJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -134,7 +135,13 @@ private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
 
         jSplitPane1.setLeftComponent(LeftJPanel);
 
+        container.setBackground(new java.awt.Color(216, 201, 174));
         container.setLayout(new java.awt.CardLayout());
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Thanks.jpeg"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        container.add(jLabel6, "card2");
+
         jSplitPane1.setRightComponent(container);
 
         getContentPane().add(jSplitPane1, "card2");
@@ -288,6 +295,7 @@ private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton login;
     private javax.swing.JButton logout;

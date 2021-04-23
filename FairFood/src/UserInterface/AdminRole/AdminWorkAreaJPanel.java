@@ -55,7 +55,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(216, 201, 174));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ManageEmp.setBackground(new java.awt.Color(255, 255, 255));
@@ -88,7 +88,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(ManageReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 280, 90));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(214, 177, 147));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterpriseLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N

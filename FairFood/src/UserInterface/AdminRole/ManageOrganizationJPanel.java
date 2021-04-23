@@ -101,7 +101,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(216, 201, 174));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         OrgTable.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N

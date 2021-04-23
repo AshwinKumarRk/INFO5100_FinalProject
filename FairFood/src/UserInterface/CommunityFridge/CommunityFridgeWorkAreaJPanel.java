@@ -106,6 +106,7 @@ public class CommunityFridgeWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         Feedback = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -167,6 +168,7 @@ public class CommunityFridgeWorkAreaJPanel extends javax.swing.JPanel {
         add(NameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 150, 30));
 
         jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Name:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 107, 30));
@@ -181,6 +183,7 @@ public class CommunityFridgeWorkAreaJPanel extends javax.swing.JPanel {
         add(View, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 138, 45));
 
         jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Write Reply:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 70));
 
@@ -189,6 +192,9 @@ public class CommunityFridgeWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(Feedback);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tomatoes.jpeg"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 740));
     }// </editor-fold>//GEN-END:initComponents
 
     private void ApprovedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApprovedActionPerformed
@@ -272,6 +278,7 @@ public class CommunityFridgeWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables

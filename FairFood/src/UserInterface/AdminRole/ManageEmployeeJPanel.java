@@ -138,7 +138,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         passlabel = new javax.swing.JLabel();
         PassField = new javax.swing.JPasswordField();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(216, 201, 174));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         orgTable.setModel(new javax.swing.table.DefaultTableModel(

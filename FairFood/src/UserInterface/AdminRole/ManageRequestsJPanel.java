@@ -91,7 +91,7 @@ public class ManageRequestsJPanel extends javax.swing.JPanel {
         back = new javax.swing.JButton();
         Search = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(216, 201, 174));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 18)); // NOI18N
