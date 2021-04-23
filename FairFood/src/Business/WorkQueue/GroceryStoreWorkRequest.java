@@ -7,26 +7,26 @@ package Business.WorkQueue;
 
 import Business.Enterprise.Products;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
  * @author ashwin
  */
-public class GroceryManagerWorkRequest extends WorkRequest {
+public class GroceryStoreWorkRequest extends WorkRequest {
     
     private ArrayList<Products> recList;
     private String recMessage;
-   
-    public GroceryManagerWorkRequest() {
-        
     
+    public GroceryStoreWorkRequest() {
+
     } 
     public ArrayList<Products> getRecList() {
         return recList;
     }
 
-    public void setRecList(ArrayList<Products> recList) {
-        this.recList = recList;
+    public void setRecList(ArrayList<Products> cusList) {
+        this.recList = cusList;
     }
 
     public String getRecMessage() {
@@ -36,9 +36,5 @@ public class GroceryManagerWorkRequest extends WorkRequest {
     public void setRecMessage(String cusMessage) {
         this.recMessage = cusMessage;
     }
-   
-    
-    
-    
+  
 }
-

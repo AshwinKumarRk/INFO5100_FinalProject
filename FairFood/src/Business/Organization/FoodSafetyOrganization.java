@@ -3,28 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organisation;
+package Business.Organization;
 
-import Business.Role.DonationManager;
+import Business.Role.FoodSafetyOfficer;
 import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
  *
- * @author truptiraut
+ * @author ashwin
  */
-public class DonationOrganisation extends Organisation {
-
-    public DonationOrganisation() {
-        super(Type.Donation.getValue());
+public class FoodSafetyOrganization extends Organization {
+    public FoodSafetyOrganization() {
+        super(Type.FoodSafetyOrganization.getValue());
     }
-    
-     @Override
+    @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new DonationManager());
+        roles.add(new FoodSafetyOfficer());
         return roles;
-    }
-     
+    }  
     
 }

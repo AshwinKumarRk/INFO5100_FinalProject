@@ -7,10 +7,10 @@ package Business.WorkQueue;
 
 /**
  *
- * @author truptiraut
+ * @author ashwin
  */
-public class DonationManagerWorkRequest  extends WorkRequest {
-     private String donationResult;
+public class DonationWorkRequest extends WorkRequest{
+    private String donationResult;
 
     public String getDonationResult() {
         return donationResult;
@@ -19,7 +19,5 @@ public class DonationManagerWorkRequest  extends WorkRequest {
     public void setDonationResult(String donationResult) {
         this.donationResult = donationResult;
     }
-
-    
-
+ 
 }
