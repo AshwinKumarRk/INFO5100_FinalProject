@@ -5,26 +5,24 @@
  */
 package Business.Organization;
 
-import Business.Role.DonationManager;
+import Business.Role.EventManager;
 import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
  *
- * @author truptiraut
+ * @author visha
  */
-public class DonationOrganisation extends Organisation {
-
-    public DonationOrganisation() {
-        super(Type.Donation.getValue());
+public class EventOrganization extends Organization {
+    public EventOrganization() {
+        super(Organization.Type.EventOrganization.getValue());
     }
     
-     @Override
+    @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new DonationManager());
+        roles.add(new EventManager());
         return roles;
     }
-     
     
 }
