@@ -149,7 +149,7 @@ public class ManageStockJPanel extends javax.swing.JPanel {
         DefaultTableModel dtm = (DefaultTableModel) Menu.getModel();
         dtm.setRowCount(0);
       
-        for(Products store:enterprise.getProductsList()) {
+        for(Products store:enterprise.getItemsList()) {
             Object row[] = new Object[1];
             row[0] = store;
             dtm.addRow(row);
@@ -160,7 +160,7 @@ public class ManageStockJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
        
             
-        for(Products p:enterprise.getProductsList()) 
+        for(Products p:enterprise.getItemsList()) 
         {
           if(ProductNAME.getText().equals(p.getItemName()))
           {

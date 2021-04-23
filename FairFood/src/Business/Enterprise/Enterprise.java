@@ -19,7 +19,7 @@ public abstract class Enterprise extends Organization{
     private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
     private GroceryStoreDirectory storeDirectory;
-    private ArrayList<Products> productsList;
+    private ArrayList<Products> itemsList;
 
     public OrganizationDirectory getOrganizationDirectory() {
         return organizationDirectory;
@@ -47,12 +47,12 @@ public abstract class Enterprise extends Organization{
     }
     }
 
-    public ArrayList<Products> getProductsList() {
-        return productsList;
+    public ArrayList<Products> getItemsList() {
+        return itemsList;
     }
 
-    public void setProductsList(ArrayList<Products> productsList) {
-        this.productsList = productsList;
+    public void setItemsList(ArrayList<Products> itemsList) {
+        this.itemsList = itemsList;
     }
 
     public EnterpriseType getEnterpriseType() {
@@ -66,17 +66,17 @@ public abstract class Enterprise extends Organization{
     public Enterprise(String name, EnterpriseType type){
         super(name);
         this.enterpriseType=type;
-        this.productsList =new ArrayList<>();
+        this.itemsList =new ArrayList<>();
         organizationDirectory=new OrganizationDirectory();
     }
     public Products createMenuItem(){
         Products item = new Products(); 
-        this.productsList.add(item);
+        this.itemsList.add(item);
         return item;
 }  
     
      public void deleteItem(Products item){
-        productsList.remove(item); 
+        itemsList.remove(item); 
     }
       
 }

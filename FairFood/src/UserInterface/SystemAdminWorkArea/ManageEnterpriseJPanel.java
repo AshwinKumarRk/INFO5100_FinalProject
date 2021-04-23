@@ -55,6 +55,14 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         }
     }
+    
+      private boolean cityPatternCorrect(String val){
+        Pattern p = Pattern.compile("^[a-zA-Z]+$");
+        Matcher m = p.matcher(val);
+        boolean b = m.matches();
+        return b;
+    }
+      
     private void populateComboF() {
         NtwComboBox.removeAllItems();
         EntComboBox.removeAllItems();
@@ -87,6 +95,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         submit = new javax.swing.JButton();
         back = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        success = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -179,6 +188,9 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("MANAGE ENTERPRISE");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 723, 30));
+
+        success.setText("Only text allowed");
+        add(success, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
@@ -200,12 +212,13 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             String name = NameField.getText();
             Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);  
             n = network;
+            success.setVisible(false);
             populateTable();
             NameField.setText("");
         }else {
             if(entAvail == 1){
                 JOptionPane.showMessageDialog(null, "Enterprise is already added","Alert",JOptionPane.INFORMATION_MESSAGE);
-             
+                success.setVisible(false);
                 NameField.setText("");
             }else{
                 JOptionPane.showMessageDialog(null, "Required fields are not filled properly","Error",JOptionPane.ERROR_MESSAGE);
@@ -237,7 +250,16 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
     private void NameFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NameFieldKeyReleased
         // TODO add your handling code here:
-
+        if(!cityPatternCorrect(NameField.getText()) && !(NameField.getText().isEmpty())){
+            success.setVisible(true);
+            nameValid = false;
+        }else if(NameField.getText().isEmpty()){
+            success.setVisible(false);
+            nameValid = false;
+        }else{
+            success.setVisible(false);
+            nameValid = true;
+        }
     }//GEN-LAST:event_NameFieldKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -252,5 +274,6 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton submit;
+    private javax.swing.JLabel success;
     // End of variables declaration//GEN-END:variables
 }
