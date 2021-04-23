@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface;
+package UserInterface;
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
@@ -13,9 +13,9 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import userinterface.Receiver.CreateNewRecJPanel;
-import userinterface.SystemAdminWorkArea.ManageNetworkJPanel;
-import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
+import UserInterface.Receiver.CreateNewRecJPanel;
+import UserInterface.SystemAdminWorkArea.ManageNetworkJPanel;
+import UserInterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 /**
  *
  * @author truptiraut
