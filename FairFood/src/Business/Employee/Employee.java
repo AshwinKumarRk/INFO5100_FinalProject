@@ -1,9 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package Business.Employee;
+
+import java.util.Random;
 
 /**
  *
@@ -13,11 +14,14 @@ public class Employee {
     
     private String name;
     private int id;
-    private static int count = 1;
+    private int min = 1000;
+    private int max = 9999;
+    private static int count = 0;
 
     public Employee() {
+         Random r = new Random();
+        count = r.nextInt(max-min) + min;
         id = count;
-        count++;
     }
 
     public int getId() {
@@ -28,6 +32,7 @@ public class Employee {
         this.name = name;
     }
 
+    
     public String getName() {
         return name;
     }
@@ -35,9 +40,7 @@ public class Employee {
     @Override
     public String toString() {
         return name;
-    
-
-}
+    }
     
     
 }
