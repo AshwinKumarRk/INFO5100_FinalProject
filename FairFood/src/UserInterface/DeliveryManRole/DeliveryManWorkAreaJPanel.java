@@ -41,10 +41,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
         this.business = business;
-        this.enterprise = enterprise;
-       
-      
-        
+        this.enterprise = enterprise; 
         populateDelivery();
     }
     
@@ -62,9 +59,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
             dtm.addRow(row);
         }
     }
-        }
-        
-        
+        }   
     }
 
     /**
