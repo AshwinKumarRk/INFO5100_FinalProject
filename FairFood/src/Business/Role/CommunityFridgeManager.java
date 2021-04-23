@@ -12,7 +12,7 @@ import Business.Organization.CommunityFridgeOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.CommunityFridge.CommunityFridgeWorkAreaJPanel;
+import UserInterface.CommunityFridge.CommunityFridgeWorkAreaJPanel;
 
 /**
  *

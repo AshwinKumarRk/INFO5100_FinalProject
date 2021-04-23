@@ -1,59 +1,30 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package Business.UserAccount;
 
 import Business.Employee.Employee;
-import Business.Enterprise.Enterprise;
-import Business.GroceryStore.GroceryStore;
-import Business.Organisation.Organisation;
-import Business.Receiver.Receiver;
 import Business.Role.Role;
 import Business.WorkQueue.WorkQueue;
+import Business.Receiver.Receiver;
 
 /**
  *
  * @author visha
  */
 public class UserAccount {
+    
     private String username;
     private String password;
-    private WorkQueue workQueue;
-    private Receiver receiver;
     private Employee employee;
+    private Receiver receiver;
     private Role role;
-    
-
-   
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    public Receiver getReceiver() {
-        return receiver;
-    }
-
-    public void setReceiver(Receiver receiver) {
-        this.receiver = receiver;
-    }
-   
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-    
+    private WorkQueue workQueue;
 
     public UserAccount() {
         workQueue = new WorkQueue();
     }
-    
-    
     
     public String getUsername() {
         return username;
@@ -71,6 +42,17 @@ public class UserAccount {
         this.password = password;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
     public Employee getEmployee() {
         return employee;
@@ -80,12 +62,17 @@ public class UserAccount {
         return workQueue;
     }
 
-    
+    public Receiver getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(Receiver receiver) {
+        this.receiver = receiver;
+    }
     
     @Override
     public String toString() {
         return username;
     }
-    
-    
+       
 }

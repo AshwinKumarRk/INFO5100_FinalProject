@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ashwin
+ * @author visha
  */
 public class OrganizationDirectory {
     
@@ -43,9 +43,11 @@ public class OrganizationDirectory {
             organizationList.add(organization);
         }
          else if (type.getValue().equals(Type.FoodAdvisorOrganisation.getValue())){
-            organization = new FoodAdvisorOrganization();
+            organization = new FoodAdvisorOrganisation();
             organizationList.add(organization);
-        }      
+        }
+     
+        
          else if (type.getValue().equals(Type.GroceryStoreOrganization.getValue())){
             organization = new GroceryStoreOrganization();
             organizationList.add(organization);
