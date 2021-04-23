@@ -11,7 +11,6 @@ import Business.Network.Network;
 import Business.Receiver.Receiver;
 import Business.Employee.Employee;
 import Business.Organization.Organization;
-import Business.Organization.FoodSafetyOrganization;
 import Business.Organization.FoodAdvisorOrganisation;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.FoodAdvisorWorkRequest;
@@ -192,7 +191,7 @@ public class FoodAdvisorWorkAreaJPanel extends javax.swing.JPanel {
         int selectedRow = RecList.getSelectedRow();
         if(selectedRow >=0){
             FoodAdvisorWorkRequest request = (FoodAdvisorWorkRequest) RecList.getValueAt(selectedRow, 2);
-            if(!"Request Accepted".equals(request.getStatus())){
+            if(!"Result Posted".equals(request.getStatus())){
                 request.setStatus("Request Accepted");
                 request.setFoodadvresult(reply.getText());
                 String name = account.getEmployee().getName();

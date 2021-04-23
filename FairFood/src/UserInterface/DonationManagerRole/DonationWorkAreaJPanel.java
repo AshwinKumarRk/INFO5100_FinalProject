@@ -172,7 +172,7 @@ public class DonationWorkAreaJPanel extends javax.swing.JPanel {
        int selectedRow = ReqTable.getSelectedRow();
         if(selectedRow >=0){
             DonationWorkRequest request = (DonationWorkRequest) ReqTable.getValueAt(selectedRow, 2);
-            if(!"Accepted".equals(request.getStatus())){
+            if(!"Result Posted".equals(request.getStatus())){
                 request.setStatus("Accepted");
                 request.setDonationResult(Reply.getText());
                 populateReqs();

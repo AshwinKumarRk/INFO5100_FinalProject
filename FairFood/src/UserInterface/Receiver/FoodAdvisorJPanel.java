@@ -9,7 +9,7 @@ import Business.EcoSystem;
 import Business.Enterprise.QualityAssuranceEnterprise;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.WorkQueue.FoodSafetyOfficerWorkRequest;
+import Business.WorkQueue.FoodAdvisorWorkRequest;
 import Business.Organization.Organization;
 import javax.swing.JOptionPane;
 import Business.Organization.FoodAdvisorOrganisation;
@@ -63,7 +63,7 @@ public class FoodAdvisorJPanel extends javax.swing.JPanel {
             row[0] = request.getRequestID();
             row[1] = request.getMessage();
             row[2] = request.getReceiver();
-            row[3] = ((FoodSafetyOfficerWorkRequest)request).getSafetResult();
+            row[3] = ((FoodAdvisorWorkRequest)request).getFoodadvresult();
             row[4] = request.getStatus();
             dtm.addRow(row);
             }
@@ -158,10 +158,10 @@ public class FoodAdvisorJPanel extends javax.swing.JPanel {
 
     private void SendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendActionPerformed
     if(userAccount.getWorkQueue().getWorkRequestList().size()== 0){
-        FoodSafetyOfficerWorkRequest req = new FoodSafetyOfficerWorkRequest();
+        FoodAdvisorWorkRequest req = new FoodAdvisorWorkRequest();
         req.setSender(userAccount);
         req.setMessage(EnterQuery.getText());
-        req.setStatus("Request sent to Physiotherapist");
+        req.setStatus("Request sent to Advisor");
         Organization org = null;
         
         for(Enterprise enter : network.getEnterpriseDirectory().getEnterpriseList()){
@@ -186,10 +186,10 @@ public class FoodAdvisorJPanel extends javax.swing.JPanel {
             int x = userAccount.getWorkQueue().getWorkRequestList().size()-1;
             WorkRequest r = userAccount.getWorkQueue().getWorkRequestList().get(x);
             if(r.getStatus().toLowerCase().equals("result posted")){
-                FoodSafetyOfficerWorkRequest req = new FoodSafetyOfficerWorkRequest();
+                FoodAdvisorWorkRequest req = new FoodAdvisorWorkRequest();
                 req.setSender(userAccount);
                 req.setMessage(EnterQuery.getText());
-                req.setStatus("Request sent to Physiotherapist");
+                req.setStatus("Request sent to Advisor");
                 Organization org = null;
 
                 for(Enterprise enter : network.getEnterpriseDirectory().getEnterpriseList()){

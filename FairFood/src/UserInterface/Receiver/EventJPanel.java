@@ -11,7 +11,7 @@ import Business.Enterprise.VolunteerEnterprise;
 import Business.UserAccount.UserAccount;
 import Business.Network.Network;
 import Business.Organization.Organization;
-import Business.Organization.DonationOrganization;
+import Business.Organization.EventOrganization;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import Business.WorkQueue.EventWorkRequest;
@@ -50,7 +50,7 @@ public class EventJPanel extends javax.swing.JPanel {
             }
         }
         for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
-            if (organization instanceof DonationOrganization){
+            if (organization instanceof EventOrganization){
                 org = organization;
                 break;
             }
@@ -161,7 +161,7 @@ public class EventJPanel extends javax.swing.JPanel {
                 }
             }
             for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
-                if (organization instanceof DonationOrganization){
+                if (organization instanceof EventOrganization){
                     org = organization;
                     break;
                 }
@@ -175,7 +175,7 @@ public class EventJPanel extends javax.swing.JPanel {
         }else{
             int x = userAccount.getWorkQueue().getWorkRequestList().size()-1;
             WorkRequest r = userAccount.getWorkQueue().getWorkRequestList().get(x);
-            if(r.getStatus().toLowerCase().equals("reply sent")){
+            if(r.getStatus().toLowerCase().equals("result posted")){
                 EventWorkRequest req = new EventWorkRequest();
                 req.setSender(userAccount);
                 req.setMessage(Message.getText());
@@ -188,7 +188,7 @@ public class EventJPanel extends javax.swing.JPanel {
                     }
                 }
                 for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
-                    if (organization instanceof DonationOrganization){
+                    if (organization instanceof EventOrganization){
                         org = organization;
                         break;
                     }

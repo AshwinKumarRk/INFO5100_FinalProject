@@ -9,7 +9,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.VolunteerEnterprise;
 import Business.Network.Network;
-import Business.Organization.EventOrganization;
+import Business.Organization.DonationOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.DonationWorkRequest;
@@ -50,7 +50,7 @@ public class DonationRequestJPanel extends javax.swing.JPanel {
             }
         }
         for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
-            if (organization instanceof EventOrganization){
+            if (organization instanceof DonationOrganization){
                 org = organization;
                 break;
             }
@@ -163,7 +163,7 @@ public class DonationRequestJPanel extends javax.swing.JPanel {
             }
         }
         for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
-            if (organization instanceof EventOrganization){
+            if (organization instanceof DonationOrganization){
                 org = organization;
                 break;
             }
@@ -190,7 +190,7 @@ public class DonationRequestJPanel extends javax.swing.JPanel {
                     }
                 }
                 for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
-                    if (organization instanceof EventOrganization){
+                    if (organization instanceof DonationOrganization){
                         org = organization;
                         break;
                     }

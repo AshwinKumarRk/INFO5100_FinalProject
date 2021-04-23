@@ -196,7 +196,7 @@ public class EventWorkAreaJPanel extends javax.swing.JPanel {
         int selectedRow = interestedList.getSelectedRow();
         if(selectedRow >=0){
             EventWorkRequest request = (EventWorkRequest) interestedList.getValueAt(selectedRow, 2);
-            if(!"Result Sent".equals(request.getStatus())){
+            if(!"Result Posted".equals(request.getStatus())){
                 request.setStatus("Result Sent");
                 request.setEventResult(message.getText());
                 String email = request.getSender().getUsername();
@@ -247,7 +247,7 @@ public class EventWorkAreaJPanel extends javax.swing.JPanel {
 		try {
 			msg.setFrom(new InternetAddress(fromEmail));
 			msg.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
-			msg.setSubject("Workout Chart");
+			msg.setSubject("Event List");
 			Multipart emailContent = new MimeMultipart();
 			MimeBodyPart textBodyPart = new MimeBodyPart();
 			textBodyPart.setText("Please find attached Event List");

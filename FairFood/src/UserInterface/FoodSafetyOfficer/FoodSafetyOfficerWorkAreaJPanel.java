@@ -188,7 +188,7 @@ public class FoodSafetyOfficerWorkAreaJPanel extends javax.swing.JPanel {
         int selectedRow = table.getSelectedRow();
         if(selectedRow >=0){
             FoodSafetyOfficerWorkRequest request = (FoodSafetyOfficerWorkRequest) table.getValueAt(selectedRow, 2);
-            if(!"Booked".equals(request.getStatus())){
+            if(!"Result Posted".equals(request.getStatus())){
                 request.setStatus("Booked");
                 request.setSafetResult(Reply.getText());
                 populateRecr();
