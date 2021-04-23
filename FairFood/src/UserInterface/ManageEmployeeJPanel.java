@@ -8,8 +8,9 @@ package UserInterface;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Organisation.Organisation;
-import Business.Organisation.OrganisationDirectory;
-import java.awt.CardLayout;
+import Bu Business.OBusiness.OrganizationionDirectory;
+import ja
+va.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -22,6 +23,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ManageEmployeeJPanel
+     */yeeJPanel
      */
      private JPanel userprocessContainer;
     private EcoSystem system;

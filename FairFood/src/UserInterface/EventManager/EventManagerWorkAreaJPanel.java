@@ -9,7 +9,7 @@ import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organisation.DonationOrganisation;
+import Business.Organization.DonationOrganisation;
 import Business.Organisation.Organisation;
 import Business.Receiver.Receiver;
 import Business.UserAccount.UserAccount;

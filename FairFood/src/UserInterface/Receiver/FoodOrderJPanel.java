@@ -10,7 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Enterprise.GroceryStoreEnterprise;
 import Business.Enterprise.Products;
 import Business.Network.Network;
-import Business.Organisation.GroceryStoreOrganisation;
+import Business.Organization.GroceryStoreOrganisation;
 import Business.Organisation.Organisation;
 import Business.Receiver.Receiver;
 import Business.UserAccount.UserAccount;
