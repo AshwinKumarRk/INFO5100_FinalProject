@@ -10,10 +10,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ashwin
+ * @author visha
  */
 public class VolunteerEnterprise extends Enterprise {
-    
     public VolunteerEnterprise(String name){
         super(name,EnterpriseType.Volunteer);
     }
@@ -21,8 +20,4 @@ public class VolunteerEnterprise extends Enterprise {
     public ArrayList<Role> getSupportedRole() {
         return null;
     }
-    
 }
-
-    
-
