@@ -41,7 +41,6 @@ public class FoodSafetyOfficerJPanel extends javax.swing.JPanel {
         this.system =system;
         this.network = network;
         this.userAccount = userAccount;
-     //   genPracTbl.getTableHeader().setDefaultRenderer(new tableHeaderColors());
         populateStatusTable();
     }
     private void populateStatusTable() {
