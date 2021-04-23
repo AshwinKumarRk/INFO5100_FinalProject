@@ -1,37 +1,37 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package Business.Enterprise;
 
-import Business.GroceryStore.GroceryStore;
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
 import Business.GroceryStore.GroceryStoreDirectory;
-import Business.Organisation.Organisation;
-import Business.Organisation.OrganisationDirectory;
-import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
  *
  * @author visha
  */
-public abstract class Enterprise extends Organisation{
+public abstract class Enterprise extends Organization{
+    
     private EnterpriseType enterpriseType;
-     private OrganisationDirectory organisationDirectory;
+    private OrganizationDirectory organizationDirectory;
     private GroceryStoreDirectory storeDirectory;
-    private ArrayList<Products> productList;
-    
-      public OrganisationDirectory getOrganisationDirectory() {
-        return organisationDirectory;
-    }
+    private ArrayList<Products> itemsList;
 
-    
+    public OrganizationDirectory getOrganizationDirectory() {
+        return organizationDirectory;
+    }
+    public GroceryStoreDirectory getStoreDirectory() {
+        return storeDirectory;
+    }
     public enum EnterpriseType{
-        GroceryStore("Grocery Store"),
-        CommunityFridge("CoomunityFridge"),
-        QualityAssurance("Quality Assurance"),
-        Transport("Transport");
+        CommunityFridge("CommunityFridge"),
+        Volunteer("Volunteer"),
+        QualityAssurance("QualityAssurance"),
+        GroceryStoreUnit("GroceryStoreUnit");
         
         private String value;
         
@@ -47,12 +47,12 @@ public abstract class Enterprise extends Organisation{
     }
     }
 
-    public ArrayList<Products> getProductsList() {
-        return productList;
+    public ArrayList<Products> getItemsList() {
+        return itemsList;
     }
 
-    public void setProductsList(ArrayList<Products> itemsList) {
-        this.productList = productList;
+    public void setItemsList(ArrayList<Products> itemsList) {
+        this.itemsList = itemsList;
     }
 
     public EnterpriseType getEnterpriseType() {
@@ -63,21 +63,21 @@ public abstract class Enterprise extends Organisation{
         this.enterpriseType = enterpriseType;
     }
     
-    public Enterprise(String name,EnterpriseType type){
+    public Enterprise(String name, EnterpriseType type){
         super(name);
         this.enterpriseType=type;
-        this.productList =new ArrayList<>();
-        organisationDirectory=new OrganisationDirectory();
+        this.itemsList =new ArrayList<>();
+        organizationDirectory=new OrganizationDirectory();
     }
     public Products createMenuItem(){
-        Products p = new Products(); 
-        this.productList.add(p);
-        return p;
+        Products item = new Products(); 
+        this.itemsList.add(item);
+        return item;
 }
       
     
-     public void deleteItem(Products p){
-        productList.remove(p); 
+     public void deleteItem(Products item){
+        itemsList.remove(item); 
     }
-    
+      
 }
