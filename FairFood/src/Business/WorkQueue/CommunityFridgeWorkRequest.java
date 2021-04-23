@@ -9,15 +9,15 @@ package Business.WorkQueue;
  *
  * @author truptiraut
  */
-public class CommunityFridgeWorkRequest extends WorkRequest{
-    private String fridgeResult;
-
-    public String getFridgeResult() {
-        return fridgeResult;
-    }
-
-    public void setFridgeResult(String fridgeResult) {
-        this.fridgeResult = fridgeResult;
-    }
+public class CommunityFridgeWorkRequest extends WorkRequest {
     
+    private String CFResult;
+
+    public String getCFResult() {
+        return CFResult;
+    }
+
+    public void setCFResult(String CFResult) {
+        this.CFResult = CFResult;
+    }
 }
