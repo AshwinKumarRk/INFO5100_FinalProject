@@ -5,6 +5,7 @@
  */
 package Business.Receiver;
 
+import Business.Employee.Employee;
 import java.util.ArrayList;
 
 /**
@@ -13,42 +14,40 @@ import java.util.ArrayList;
  */
 public class ReceiverDirectory {
     
- private ArrayList<Receiver> receiverList;
+    private ArrayList<Receiver> recList;
 
     public ReceiverDirectory() {
-        receiverList = new ArrayList();
+        recList = new ArrayList();
     }
 
-    public ArrayList<Receiver> getReceiverList() {
-        return receiverList;
+    public ArrayList<Receiver> getRecList() {
+        return recList;
     }
     
-    public Receiver createReceiver(Receiver receiver){
-        
-        receiverList.add(receiver);
-        return receiver;
+    public Receiver createReceiver(Receiver c){
+        recList.add(c);
+        return c;
     }
     
-    public void removeReceiver(Receiver c){
-        receiverList.remove(c);
+    public void removeReceiver(Receiver r){
+        recList.remove(r);
     }
     
     public boolean checkIfUsernameIsUnique(String email){
-        for (Receiver e : receiverList){
+        for (Receiver e : recList){
             if (e.getEmail().equals(email))
                 return false;
         }
         return true;
     }
-       public Receiver updateReceiver(Receiver rec, String name, String address, String city, String state, String location, int deliveryTime){
+       public Receiver updateReceiver(Receiver rec, String name , String address, String city, String zipcode){
         rec.setName(name);
         rec.setAddress(address);
         rec.setCity(city);
-        rec.setState(state);
-        rec.setLocation(location);
+        rec.setZipcode(zipcode);
+       
         
         return rec;
     } 
     
 }
-
