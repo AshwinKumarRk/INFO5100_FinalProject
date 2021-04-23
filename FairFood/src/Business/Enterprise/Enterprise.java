@@ -8,7 +8,7 @@ package Business.Enterprise;
 import Business.GroceryStore.GroceryStore;
 import Business.GroceryStore.GroceryStoreDirectory;
 import Business.Organisation.Organisation;
-import Business.Organisation.OrganisationDirectory;
+import Business.Organization.OrganisationDirectory;
 import Business.Role.Role;
 import java.util.ArrayList;
 

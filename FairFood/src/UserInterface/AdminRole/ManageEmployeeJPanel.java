@@ -8,7 +8,7 @@ package UserInterface.AdminRole;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Organisation.Organisation;
-import Business.Organisation.OrganisationDirectory;
+import Business.Organization.OrganisationDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;

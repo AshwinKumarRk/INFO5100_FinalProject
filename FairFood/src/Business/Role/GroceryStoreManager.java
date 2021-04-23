@@ -8,7 +8,7 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organisation.GroceryStoreOrganisation;
+import Business.Organization.GroceryStoreOrganisation;
 import Business.Organisation.Organisation;
 import Business.UserAccount.UserAccount;
 import UserInterface.DeliveryPerson.DeliveryManWorkAreaJPanel;
