@@ -27,13 +27,20 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
      *
      * Creates new form ManageNetworkJPanel
      */
-    private boolean Validate;
+    private boolean cityValid;
     public ManageNetworkJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;
         this.system = system;
         populateNetwork();
+    }
+    
+    private boolean cityPatternCorrect(String val){
+        Pattern p = Pattern.compile("^[a-zA-Z]+$");
+        Matcher m = p.matcher(val);
+        boolean b = m.matches();
+        return b;
     }
 
     private void populateNetwork() {
@@ -65,6 +72,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         NtwTable = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         delete = new javax.swing.JButton();
+        label = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -150,10 +158,13 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             }
         });
         add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 80, 30));
+
+        label.setText("Only text allowed");
+        add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        if(Validate){
+        if(cityValid){
             String name = Name.getText();
             Network network = system.createAndAddNetwork();
             network.setName(name);
@@ -175,7 +186,16 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
     private void NameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NameKeyReleased
         // TODO add your handling code here:
-        
+        if(!cityPatternCorrect(Name.getText()) && !(Name.getText().isEmpty())){
+            label.setVisible(true);
+            cityValid = false;
+        }else if(Name.getText().isEmpty()){
+            label.setVisible(false);
+            cityValid = false;
+        }else{
+            label.setVisible(false);
+            cityValid = true;
+        }
     }//GEN-LAST:event_NameKeyReleased
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
@@ -198,6 +218,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel label;
     private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }

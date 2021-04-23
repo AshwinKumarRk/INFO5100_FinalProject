@@ -6,7 +6,7 @@
 package UserInterface.Receiver;
 
 import Business.Receiver.Receiver;
-import userinterface.SystemAdminWorkArea.*;
+import UserInterface.SystemAdminWorkArea.*;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
