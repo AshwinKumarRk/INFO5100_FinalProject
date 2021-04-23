@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class GroceryStoreEnterprise extends Enterprise{
     public GroceryStoreEnterprise (String name) {
-        super(name, Enterprise.EnterpriseType.GroceryStore);
+        super(name, Enterprise.EnterpriseType.GroceryStoreUnit);
     }
 
     public ArrayList<Role> getSupportedRole() {
