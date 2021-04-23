@@ -14,18 +14,34 @@ import java.util.Random;
  */
 public class Receiver {
     
- private String name;
+    private String name;
+    private int id;
+    private static int count = 0;
+    private Network network;
+    private String zipcode;
+    private String enterprise;
+    private String email;
     private String address;
     private String city;
-    private String state;
-     private String email;
-       private Network network;
-    private String enterprise;
+    private int min = 1000;
+    private int max = 9999;
 
+    public Receiver() {
+        Random r = new Random();
+        count = r.nextInt(max-min) + min;
+        id = count;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    
     public Network getNetwork() {
         return network;
     }
 
+   
     public void setNetwork(Network network) {
         this.network = network;
     }
@@ -37,28 +53,31 @@ public class Receiver {
     public void setEnterprise(String enterprise) {
         this.enterprise = enterprise;
     }
-    private int min = 1000;
-    private int max = 9999;
-    private static int count = 0;
-    private int id;
-    private String[] catersTo;
-    private String location;
-    private int deliveryTime;
-
- 
     
-    public Receiver() {
-        Random r = new Random();
-        count = r.nextInt(max-min) + min;
-        id = count;
+     public void setName(String name) {
+        this.name = name;
     }
 
+    
     public String getName() {
         return name;
     }
+    
+    public String getCity() {
+        return city;
+    }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAddress() {
@@ -69,84 +88,18 @@ public class Receiver {
         this.address = address;
     }
 
-    public String getCity() {
-        return city;
+    public String getZipcode() {
+        return zipcode;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
     }
-
-    public String getState() {
-        return state;
+   
+    
+    @Override
+    public String toString() {
+        return name;
     }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getMin() {
-        return min;
-    }
-
-    public void setMin(int min) {
-        this.min = min;
-    }
-
-    public int getMax() {
-        return max;
-    }
-
-    public void setMax(int max) {
-        this.max = max;
-    }
-
-    public static int getCount() {
-        return count;
-    }
-
-    public static void setCount(int count) {
-        Receiver.count = count;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String[] getCatersTo() {
-        return catersTo;
-    }
-
-    public void setCatersTo(String[] catersTo) {
-        this.catersTo = catersTo;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public int getDeliveryTime() {
-        return deliveryTime;
-    }
-
-    public void setDeliveryTime(int deliveryTime) {
-        this.deliveryTime = deliveryTime;
-    }
-
-  }
+    
+}
