@@ -9,16 +9,15 @@ import Business.Enterprise.EnterpriseDirectory;
 
 /**
  *
- * @author visha
+ * @author MyPC1
  */
 public class Network {
     private String name;
     private EnterpriseDirectory enterpriseDirectory;
-
-    public Network() {
-        enterpriseDirectory = new EnterpriseDirectory();
+    
+    public Network(){
+        enterpriseDirectory=new EnterpriseDirectory();
     }
-
     public String getName() {
         return name;
     }
@@ -30,9 +29,10 @@ public class Network {
     public EnterpriseDirectory getEnterpriseDirectory() {
         return enterpriseDirectory;
     }
-
+    
     @Override
-    public String toString() {
+    public String toString(){
         return name;
     }
+    
 }

@@ -5,44 +5,36 @@
  */
 package Business;
 
-import Business.Employee.EmployeeDirectory;
-import Business.Enterprise.Enterprise;
 import Business.Enterprise.EnterpriseDirectory;
-import Business.GroceryStore.GroceryStore;
+import Business.Enterprise.Products;
 import Business.Network.Network;
-import Business.UserAccount.UserAccount;
-import Business.Organisation.Organisation;
-import Business.Organisation.OrganisationDirectory;
-import Business.Role.AdminRole;
+import Business.Organization.Organization;
+import Business.GroceryStore.GroceryStoreDirectory;
+import Business.Role.Role;
 import Business.Role.SystemAdminRole;
-import java.awt.Color;
+import Business.GroceryStore.GroceryStore;
 import java.util.ArrayList;
-import java.util.Properties;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javax.management.relation.Role;
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 /**
  *
- * @author visha
+ * @author MyPC1
  */
-public class EcoSystem extends Organisation{
-      private static EcoSystem business;
+public class EcoSystem extends Organization{
+    
+    private static EcoSystem business;
     private ArrayList<Network> networkList;
-     private GroceryStore grocerystoreDirectory;
-      private EnterpriseDirectory enterpriseDirectory;
-      
-       private EcoSystem(){
+    private ReceiverRequestDirectory customerRequestDirectory;
+    private EnterpriseDirectory enterpriseDirectory;
+    private GroceryStore storeDirectory;
+    
+    private EcoSystem(){
         super(null);
+        customerRequestDirectory = new ReceiverRequestDirectory();
         enterpriseDirectory=new EnterpriseDirectory();
         networkList=new ArrayList<Network>();
     }
 
-
-     public EnterpriseDirectory getEnterpriseDirectory() {
+    public EnterpriseDirectory getEnterpriseDirectory() {
         return enterpriseDirectory;
     }
 
@@ -52,6 +44,13 @@ public class EcoSystem extends Organisation{
 
     public static EcoSystem getBusiness() {
         return business;
+    }
+    public ReceiverRequestDirectory getCustomerRequestDirectory() {
+        return customerRequestDirectory;
+    }
+
+    public void setCustomerRequestDirectory(ReceiverRequestDirectory customerRequestDirectory) {
+        this.customerRequestDirectory = customerRequestDirectory;
     }
 
     public static void setBusiness(EcoSystem business) {
@@ -73,11 +72,11 @@ public class EcoSystem extends Organisation{
     
     public void removeNetwork(Network network){
         networkList.remove(network);
-       
+        //return network;
     }
     @Override
-     public ArrayList<Business.Role.Role> getSupportedRole() {
-        ArrayList<Business.Role.Role> roleList=new ArrayList<Business.Role.Role>();
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roleList=new ArrayList<Role>();
         roleList.add(new SystemAdminRole());
         return roleList;
     }

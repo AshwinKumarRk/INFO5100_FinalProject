@@ -1,64 +1,48 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Organisation;
+package Business.Organization;
 
-import Business.Employee.EmployeeDirectory;
 import Business.Receiver.ReceiverDirectory;
+import Business.Employee.EmployeeDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
 import Business.WorkQueue.WorkQueue;
 import java.util.ArrayList;
 import java.util.Random;
 
-
 /**
  *
- * @author ashwin
+ * @author truptiraut
  */
-public abstract class Organisation {
-     public String name;
+public abstract class Organization {
+
+    public String name;
     private WorkQueue workQueue;
-     private ReceiverDirectory receiverDirectory;
-    private int organisationID;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
-   
+    private ReceiverDirectory receiverDirectory;
+    private int organizationID;
    private int min = 1000;
     private int max = 9999;
     private static int count = 0;
 
-    public ReceiverDirectory getReceiverDirectory() {
-        return receiverDirectory;
-    }
-
-    public void setReceiverDirectory(ReceiverDirectory receiverDirectory) {
-        this.receiverDirectory = receiverDirectory;
-    }
-   
-    public int getOrganisationID() {
-        return organisationID;
-    }
-
-    public void setOrganisationID(int organisationID) {
-        this.organisationID = organisationID;
-    }
-   
     
-   
     public enum Type{
-       Admin("Admin Organisation"),
-       Inspector("Inspector Organisation"),
-       FoodAdvisor("Food Advisor"),
-       Stock("Inventory Organisation"),
-       Receiver("Receiver Organisation"),
-       GroceryStore("Donor Organisation"),
-       DeliveryMan("Delivery Organisation"),
-       CommunityFridge("CommunityFridge Organisation");
+        Admin("Admin Organization"), 
+        CommunityFridge("CommunityFridge Organization"), 
+        DonationOrganization("Donation Organization"),
+        EventOrganization(" Event Organization"),
+        FoodAdvisorOrganisation("FoodAdvisor Organization"),
+        FoodSafetyOrganization("FoodSafety"),
+        GroceryStoreOrganization("GroceryStore Organization"),
+        Delivery("DeliveryMan");
+        //Lab("Lab Organization"),
+        //Doctor("Doctor Organisation");
         
         private String value;
+        
         private Type(String value) {
             this.value = value;
         }
@@ -67,7 +51,7 @@ public abstract class Organisation {
         }
     }
 
-    public Organisation(String name) {
+    public Organization(String name) {
         this.name = name;
         workQueue = new WorkQueue();
         employeeDirectory = new EmployeeDirectory();
@@ -75,7 +59,7 @@ public abstract class Organisation {
         receiverDirectory = new ReceiverDirectory();
           Random r = new Random();
         count = r.nextInt(max-min) + min;
-        organisationID = count;
+        organizationID = count;
     }
 
     public abstract ArrayList<Role> getSupportedRole();
@@ -84,12 +68,15 @@ public abstract class Organisation {
         return userAccountDirectory;
     }
 
-   
-    public ReceiverDirectory getCustomerDirectory() {
+    public int getOrganizationID() {
+        return organizationID;
+    }
+
+    public ReceiverDirectory getReceiverDirectory() {
         return receiverDirectory;
     }
 
-    public void setCustomerDirectory(ReceiverDirectory customerDreceiverDirectoryirectory) {
+    public void setReceiverDirectory(ReceiverDirectory receiverDirectory) {
         this.receiverDirectory = receiverDirectory;
     }
     
