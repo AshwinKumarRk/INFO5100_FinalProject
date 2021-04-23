@@ -5,48 +5,42 @@
  */
 package Business.Enterprise;
 
-import java.util.Date;
-
 /**
  *
  * @author truptiraut
  */
 public class Products {
-    
-String productName;
-    String productType;
-    private Date expires;
+    String itemName;
+    String itemType;
+    int price;
 
-     @Override
+    public String getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(String itemType) {
+        this.itemType = itemType;
+    }
+
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String ItemName) {
+        this.itemName = ItemName;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+    
+      @Override
         public String toString(){
-        return productName;
+        return itemName;
     }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getProductType() {
-        return productType;
-    }
-
-    public void setProductType(String productType) {
-        this.productType = productType;
-    }
-
-    public Date getExpires() {
-        return expires;
-    }
-
-    public void setExpires(Date expires) {
-        this.expires = expires;
-    }
-
-
-    
 }
-
