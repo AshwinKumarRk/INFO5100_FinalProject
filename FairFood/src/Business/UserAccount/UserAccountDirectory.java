@@ -1,16 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package Business.UserAccount;
 
+import Business.Receiver.Receiver;
 import Business.Employee.Employee;
-import Business.GroceryStore.GroceryStore;
-import static Business.Organisation.Organisation.Type.GroceryStore;
 import Business.Role.Role;
 import java.util.ArrayList;
-import Business.Receiver.Receiver;
+
 /**
  *
  * @author visha
@@ -35,7 +33,15 @@ public class UserAccountDirectory {
         return null;
     }
     
-    public UserAccount createUserAccount(String username, String password, Employee employee, Role role){
+    public UserAccount createUserAccount(String username, String password, Role role){
+        UserAccount userAccount = new UserAccount();
+        userAccount.setUsername(username);
+        userAccount.setPassword(password);
+        userAccount.setRole(role);
+        userAccountList.add(userAccount);
+        return userAccount;
+    }
+    public UserAccount createUserAccount(String username, String password,Employee employee, Role role){
         UserAccount userAccount = new UserAccount();
         userAccount.setUsername(username);
         userAccount.setPassword(password);
@@ -44,29 +50,25 @@ public class UserAccountDirectory {
         userAccountList.add(userAccount);
         return userAccount;
     }
-    
-    
-    public UserAccount createReceiverAccount(String username, String password, Receiver receiver, Role role)
-    {
-      UserAccount userAccount = new UserAccount();
+    public UserAccount createReceiverAccount(String username, String password,Receiver customer, Role role){
+        UserAccount userAccount = new UserAccount();
         userAccount.setUsername(username);
         userAccount.setPassword(password);
-        userAccount.setReceiver(receiver);
+        userAccount.setReceiver(customer);
         userAccount.setRole(role);
         userAccountList.add(userAccount);
-        return userAccount;  
+        return userAccount;
     }
     
-      public void removeUserAccount(UserAccount ua){
+    public void removeUserAccount(UserAccount ua){
         userAccountList.remove(ua);
     }
-    // Update User Account
+ 
     public UserAccount updateUserAccount(UserAccount userAccount, String password){
         userAccount.setPassword(password);
         return userAccount;
     }
     
-   
     public boolean checkIfUsernameIsUnique(String username){
         for (UserAccount ua : userAccountList){
             if (ua.getUsername().equals(username))
@@ -74,5 +76,4 @@ public class UserAccountDirectory {
         }
         return true;
     }
-    
 }
