@@ -4,44 +4,37 @@
  * and open the template in the editor.
  */
 package UserInterface;
-
 import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organisation.Organisation;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import UserInterface.Receiver.CreateNewReceiverJPanel;
 import java.awt.CardLayout;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import static java.time.Clock.system;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
+import UserInterface.Receiver.CreateNewRecJPanel;
+import UserInterface.SystemAdminWorkArea.ManageNetworkJPanel;
+import UserInterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 /**
  *
  * @author truptiraut
  */
 public class MainJFrame extends javax.swing.JFrame {
-
-    /**
-     * Creates new form MainJFrame
-     */
-    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     EcoSystem system;
     UserAccount account;
-    Network network;
     Enterprise enterprise;
-    Organisation organisation;
+    Organization organization;
+    Network network;
     /**
-     * Creates new form MainJFrameCopy
+     * Creates new form MainJFrame
      */
     public MainJFrame() {
         initComponents();
          system = dB4OUtil.retrieveSystem();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,128 +44,167 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        SplitPane = new javax.swing.JSplitPane();
-        panel1 = new javax.swing.JPanel();
-        loginButton = new javax.swing.JButton();
-        userNameTextField = new javax.swing.JTextField();
-        usernameJLabel = new javax.swing.JLabel();
-        passwordJLabel = new javax.swing.JLabel();
-        logoutButton = new javax.swing.JButton();
-        passwordTextField = new javax.swing.JPasswordField();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        LeftJPanel = new javax.swing.JPanel();
+        EmailName = new javax.swing.JTextField();
+        PasswordField = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        login = new javax.swing.JButton();
+        signup = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        SignUp = new javax.swing.JButton();
-        panel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        container = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        SplitPane.setDividerLocation(150);
-        SplitPane.setDividerSize(21);
+        jSplitPane1.setDividerLocation(300);
+        jSplitPane1.setMaximumSize(new java.awt.Dimension(1754, 724));
 
-        panel1.setBackground(new java.awt.Color(186, 108, 44));
-        panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        LeftJPanel.setBackground(new java.awt.Color(255, 255, 255));
+        LeftJPanel.setMaximumSize(new java.awt.Dimension(467, 722));
+        LeftJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        loginButton.setText("Login");
-        loginButton.addActionListener(new java.awt.event.ActionListener() {
+        EmailName.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        EmailName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginButtonActionPerformed(evt);
+                EmailNameActionPerformed(evt);
             }
         });
-        panel1.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 104, -1));
-        panel1.add(userNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 127, -1));
+        LeftJPanel.add(EmailName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 204, 32));
 
-        usernameJLabel.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
-        usernameJLabel.setText("UserName");
-        panel1.add(usernameJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 132, 34));
-
-        passwordJLabel.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
-        passwordJLabel.setText("Password");
-        panel1.add(passwordJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 171, 132, 34));
-
-        logoutButton.setText("Logout");
-        logoutButton.addActionListener(new java.awt.event.ActionListener() {
+        PasswordField.setFont(new java.awt.Font("SansSerif", 0, 10)); // NOI18N
+        PasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutButtonActionPerformed(evt);
+                PasswordFieldActionPerformed(evt);
             }
         });
-        panel1.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 104, -1));
+        LeftJPanel.add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 204, 32));
 
-        passwordTextField.addActionListener(new java.awt.event.ActionListener() {
+        jLabel4.setFont(new java.awt.Font("PT Serif Caption", 1, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("SignUp Here");
+        LeftJPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 204, -1));
+
+        login.setBackground(new java.awt.Color(255, 102, 0));
+        login.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        login.setText("Log in");
+        login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordTextFieldActionPerformed(evt);
+                loginActionPerformed(evt);
             }
         });
-        panel1.add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 132, -1));
+        LeftJPanel.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 148, 49));
 
-        jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
-        jLabel1.setText("New User?");
-        panel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 433, -1, -1));
-
-        SignUp.setText("Sign Up");
-        SignUp.addActionListener(new java.awt.event.ActionListener() {
+        signup.setBackground(new java.awt.Color(255, 102, 0));
+        signup.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        signup.setText("Sign Up");
+        signup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SignUpActionPerformed(evt);
+                signupActionPerformed(evt);
             }
         });
-        panel1.add(SignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 464, -1, -1));
+        LeftJPanel.add(signup, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 580, 149, 49));
 
-        SplitPane.setLeftComponent(panel1);
+        logout.setBackground(new java.awt.Color(255, 102, 0));
+        logout.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        logout.setText("Log Out");
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
+        LeftJPanel.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 148, 49));
 
-        panel2.setBackground(new java.awt.Color(215, 200, 174));
-        panel2.setForeground(new java.awt.Color(255, 204, 102));
-        panel2.setAutoscrolls(true);
-        panel2.setLayout(new java.awt.CardLayout());
+        jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 18)); // NOI18N
+        jLabel1.setText("UserName");
+        LeftJPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Thanks.jpeg"))); // NOI18N
-        panel2.add(jLabel2, "card2");
+        jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 18)); // NOI18N
+        jLabel2.setText("Password");
+        LeftJPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
+        LeftJPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
 
-        SplitPane.setRightComponent(panel2);
+        jLabel5.setFont(new java.awt.Font("PT Serif Caption", 3, 24)); // NOI18N
+        jLabel5.setText("Eat Away Hunger!!!");
+        LeftJPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        getContentPane().add(SplitPane, "card2");
+        jSplitPane1.setLeftComponent(LeftJPanel);
+
+        container.setLayout(new java.awt.CardLayout());
+        jSplitPane1.setRightComponent(container);
+
+        getContentPane().add(jSplitPane1, "card2");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
+        logout.setEnabled(false);
+        EmailName.setEnabled(true);
+        signup.setVisible(true);
+        PasswordField.setEnabled(true);
+        login.setEnabled(true);
 
-        String userName = userNameTextField.getText();
-        // Get Password
-        char[] passwordCharArray = passwordTextField.getPassword();
+        EmailName.setText("");
+        PasswordField.setText("");
+
+        container.removeAll();
+        jSplitPane1.setLeftComponent(LeftJPanel);
+        container.setLayout(new java.awt.CardLayout());
+        jSplitPane1.setRightComponent(container);
+        getContentPane().add(jSplitPane1, "card2");
+        pack();
+        jSplitPane1.setDividerLocation(300);
+        dB4OUtil.storeSystem(system);
+    }//GEN-LAST:event_logoutActionPerformed
+
+    private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
+        System.out.println("user list  " + system.getUserAccountDirectory().getUserAccountList());
+        CreateNewRecJPanel createCus =new CreateNewRecJPanel(container, system);
+        container.add("SignUpJPanel",createCus);
+        CardLayout layout=(CardLayout)container.getLayout();
+        layout.next(container);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signupActionPerformed
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+
+        String userName = EmailName.getText();
+
+        char[] passwordCharArray = PasswordField.getPassword();
         String password = String.valueOf(passwordCharArray);
-        
-        //Step1: Check in the system admin user account directory if you have the user
         UserAccount userAccount=system.getUserAccountDirectory().authenticateUser(userName, password);
+
         Enterprise enterprise =null;
-        Organisation organization=null;
-        
+        Organization organization=null;
+
         if(userAccount==null){
-            //Step 2: Go inside each network and check each enterprise
             for(Network network:system.getNetworkList()){
-                //Step 2.a: check against each enterprise
                 for(Enterprise e:network.getEnterpriseDirectory().getEnterpriseList()){
                     userAccount=e.getUserAccountDirectory().authenticateUser(userName, password);
                     if(userAccount==null){
-                       //Step 3:check against each organization for each enterprise
-                       for(Organisation org:e.getOrganisationDirectory().getOrganisationList()){
-                           userAccount=org.getUserAccountDirectory().authenticateUser(userName, password);
-                           if(userAccount!=null){
-                               enterprise = e;
-                               organisation=org;
-                               break;
-                           }
-                       }
-                        
+                        for(Organization org:e.getOrganizationDirectory().getOrganizationList()){
+                            userAccount=org.getUserAccountDirectory().authenticateUser(userName, password);
+                            if(userAccount!=null){
+                                enterprise = e;
+                                organization=org;
+                                break;
+                            }
+                        }
+
                     }
                     else{
-                       enterprise = e;
-                       break;
+                        enterprise = e;
+                        break;
                     }
                     if(organization!=null){
                         break;
-                    }  
+                    }
                 }
                 if(enterprise!=null){
                     break;
@@ -181,89 +213,84 @@ public class MainJFrame extends javax.swing.JFrame {
         }
         if(userAccount !=null && userAccount.getReceiver() != null){
             network = userAccount.getReceiver().getNetwork();
-        
+
         }
         if(userAccount==null){
             JOptionPane.showMessageDialog(null, "Invalid credentials");
             return;
         }
         else{
-            CardLayout layout=(CardLayout)panel2.getLayout();
-            panel2.add("workArea",userAccount.getRole().createWorkArea(panel2, enterprise, organisation,userAccount , system, network));
-            layout.next(panel2);
+            CardLayout layout=(CardLayout)container.getLayout();
+            container.add("workArea",userAccount.getRole().createWorkArea(container, enterprise, organization,userAccount , system, network));
+            layout.next(container);
+        }
+
+        login.setEnabled(false);
+        logout.setEnabled(true);
+        EmailName.setEnabled(false);
+        PasswordField.setEnabled(false);
+        signup.setVisible(false);
+    }//GEN-LAST:event_loginActionPerformed
+
+    private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PasswordFieldActionPerformed
+
+    private void EmailNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmailNameActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
-        loginButton.setEnabled(false);
-        logoutButton.setEnabled(true);
-        userNameTextField.setEnabled(false);
-        passwordTextField.setEnabled(false);
-        SignUp.setVisible(false);
+        //</editor-fold>
+      
 
-    }//GEN-LAST:event_loginButtonActionPerformed
-
-    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
-        // TODO add your handling code here:
-       
-        logoutButton.setEnabled(false);
-        userNameTextField.setEnabled(true);
-        passwordTextField.setEnabled(true);
-        loginButton.setEnabled(true);
-        //orangeLbl.setEnabled(true);
-        SignUp.setVisible(true);
-
-        userNameTextField.setText("");
-        passwordTextField.setText("");
-
-        panel2.removeAll();
-       SplitPane.setLeftComponent(panel1);
-
-        panel2.setLayout(new java.awt.CardLayout());
-
-        //orangeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/orangesBackground.jpg"))); // NOI18N
-       
-       // panel2.add(orangeLbl, "card2");
-        SplitPane.setRightComponent(panel2);
-        getContentPane().add(SplitPane, "card2");
-        pack();
-        SplitPane.setDividerLocation(300);
-        dB4OUtil.storeSystem(system);
-
-    }//GEN-LAST:event_logoutButtonActionPerformed
-
-    private void passwordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordTextFieldActionPerformed
-
-    private void SignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpActionPerformed
-        // TODO add your handling code here:
-        System.out.println("user list  " + system.getUserAccountDirectory().getUserAccountList());
-        CreateNewReceiverJPanel createCus =new CreateNewReceiverJPanel(panel2, system);
-        panel2.add("SignUpJPanel",createCus);
-        CardLayout layout=(CardLayout)panel2.getLayout();
-        layout.next(panel2);
-    }//GEN-LAST:event_SignUpActionPerformed
-public static void main(String args[]) {
-       
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainJFrame().setVisible(true);
             }
         });
     }
-   
-//    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton SignUp;
-    private javax.swing.JSplitPane SplitPane;
+    private javax.swing.JTextField EmailName;
+    private javax.swing.JPanel LeftJPanel;
+    private javax.swing.JPasswordField PasswordField;
+    private javax.swing.JPanel container;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JButton loginButton;
-    private javax.swing.JButton logoutButton;
-    private javax.swing.JPanel panel1;
-    private javax.swing.JPanel panel2;
-    private javax.swing.JLabel passwordJLabel;
-    private javax.swing.JPasswordField passwordTextField;
-    private javax.swing.JTextField userNameTextField;
-    private javax.swing.JLabel usernameJLabel;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JButton login;
+    private javax.swing.JButton logout;
+    private javax.swing.JButton signup;
     // End of variables declaration//GEN-END:variables
 }
