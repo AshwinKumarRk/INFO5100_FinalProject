@@ -11,20 +11,18 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ashwin
+ * @author visha
  */
-public class EventOrganisation extends Organisation {
-
-    public EventOrganisation() {
-        super(Type.Donation.getValue());
+public class EventOrganization extends Organization {
+    public EventOrganization() {
+        super(Organization.Type.EventOrganization.getValue());
     }
     
-     @Override
+    @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
         roles.add(new EventManager());
         return roles;
     }
-     
     
 }
