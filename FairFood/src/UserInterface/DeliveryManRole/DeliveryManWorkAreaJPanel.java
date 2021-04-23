@@ -75,6 +75,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         Deliveries = new javax.swing.JTable();
         Deliver = new javax.swing.JButton();
         refresh = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -121,7 +122,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
             Deliveries.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 730, 96));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 730, 96));
 
         Deliver.setBackground(new java.awt.Color(102, 153, 0));
         Deliver.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -131,7 +132,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
                 DeliverActionPerformed(evt);
             }
         });
-        add(Deliver, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 150, 50));
+        add(Deliver, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 150, 50));
 
         refresh.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
         refresh.setText("Refresh");
@@ -140,7 +141,10 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
                 refreshActionPerformed(evt);
             }
         });
-        add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 120, 50));
+        add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 120, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delivery.jpeg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 1200, 600));
     }// </editor-fold>//GEN-END:initComponents
 
     private void DeliverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeliverActionPerformed
@@ -170,6 +174,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Deliver;
     private javax.swing.JTable Deliveries;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refresh;
     // End of variables declaration//GEN-END:variables
