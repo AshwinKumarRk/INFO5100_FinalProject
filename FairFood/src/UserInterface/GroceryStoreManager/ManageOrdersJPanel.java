@@ -92,7 +92,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Managing Orders");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-150, 20, 1200, 37));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-190, 30, 1200, 37));
 
         Back.setBackground(new java.awt.Color(255, 102, 0));
         Back.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -112,7 +112,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 viewActionPerformed(evt);
             }
         });
-        add(view, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, -1, -1));
+        add(view, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, -1, -1));
 
         ref.setBackground(new java.awt.Color(255, 102, 0));
         ref.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -122,7 +122,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 refActionPerformed(evt);
             }
         });
-        add(ref, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, -1));
+        add(ref, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, -1, -1));
 
         take.setBackground(new java.awt.Color(255, 102, 0));
         take.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -132,7 +132,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 takeActionPerformed(evt);
             }
         });
-        add(take, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+        add(take, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
 
         assign.setBackground(new java.awt.Color(255, 102, 0));
         assign.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -142,12 +142,12 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 assignActionPerformed(evt);
             }
         });
-        add(assign, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, -1, -1));
+        add(assign, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Order Details");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 452, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 452, -1));
 
         orders1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -177,7 +177,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         ));
         jScrollPane4.setViewportView(place1);
 
-        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 490, 90));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 490, 90));
 
         jLabel3.setBackground(new java.awt.Color(243, 223, 198));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/beige.jpeg"))); // NOI18N

@@ -49,11 +49,11 @@ public class ManageGroceryStoreJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(80, 80, 82));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Manage Grocery Store");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-360, 220, 1200, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-320, 220, 1200, -1));
 
         stock.setBackground(new java.awt.Color(255, 255, 255));
         stock.setFont(new java.awt.Font("PT Serif Caption", 0, 18)); // NOI18N
@@ -63,7 +63,7 @@ public class ManageGroceryStoreJPanel extends javax.swing.JPanel {
                 stockActionPerformed(evt);
             }
         });
-        add(stock, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 170, 90));
+        add(stock, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 170, 90));
 
         orders.setBackground(new java.awt.Color(255, 255, 255));
         orders.setFont(new java.awt.Font("PT Serif Caption", 0, 18)); // NOI18N
@@ -73,7 +73,7 @@ public class ManageGroceryStoreJPanel extends javax.swing.JPanel {
                 ordersActionPerformed(evt);
             }
         });
-        add(orders, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 170, 90));
+        add(orders, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 170, 90));
 
         jLabel2.setBackground(new java.awt.Color(243, 223, 198));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/beige.jpeg"))); // NOI18N

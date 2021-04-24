@@ -152,7 +152,7 @@ public class ReceiverWorkAreaJPanel extends javax.swing.JPanel {
                 participateActionPerformed(evt);
             }
         });
-        add(participate, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, -1, 51));
+        add(participate, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 100, -1, 51));
 
         update.setBackground(new java.awt.Color(255, 102, 0));
         update.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -275,15 +275,15 @@ public class ReceiverWorkAreaJPanel extends javax.swing.JPanel {
                 PlaceOrderActionPerformed(evt);
             }
         });
-        add(PlaceOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 520, 106, 51));
+        add(PlaceOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 380, 130, 60));
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Community Fridge");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, 130, 60));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 230, 130, 60));
 
         jLabel1.setText("Details");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, -1, -1));
