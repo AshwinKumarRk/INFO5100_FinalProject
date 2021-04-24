@@ -12,7 +12,7 @@ import Business.Organization.Organization;
 import Business.Organization.EventOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import UserInterface.DonationManagerRole.DonationWorkAreaJPanel;
+import UserInterface.EventManagerRole.EventWorkAreaJPanel;
 
 /**
  *
@@ -23,7 +23,7 @@ public class EventManager extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, Enterprise enterprise, Organization organization, UserAccount account, EcoSystem business, Network network) {
-        return new DonationWorkAreaJPanel(userProcessContainer, enterprise, organization, account, business, network);
+        return new EventWorkAreaJPanel(userProcessContainer, enterprise, organization, account, business, network);
     }
     
 }

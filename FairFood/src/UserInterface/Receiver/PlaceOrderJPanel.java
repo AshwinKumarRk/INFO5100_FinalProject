@@ -36,6 +36,7 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
     private EcoSystem systems;
     private String total;
     private int productsCount = 0;
+       private int itemCount = 0;
     private int cartCount=0;
     private Enterprise enterprise;
     private ArrayList<Products> recList;
@@ -59,58 +60,86 @@ public class PlaceOrderJPanel extends javax.swing.JPanel {
         this.recList = new ArrayList<>();
         populateProducts();
     }
-     public String populateTable(){
-        DefaultTableModel dtm = (DefaultTableModel) CartItems.getModel();
+    
+    
+      public String populateTable(){
+        DefaultTableModel dtm = (DefaultTableModel) CartItems1.getModel();
         dtm.setRowCount(0);
         int totalBill=0;
-        for(int i=productsCount;i<recList.size();i++)
-        {
-            Object row[] = new Object[1];
+        for(int i=itemCount;i<recList.size();i++) {
+            Object row[] = new Object[2];
             
             row[0] = recList.get(i);
-            
+           
             dtm.addRow(row);
         }
         
-        return null;
+        
+    return String.valueOf(totalBill);
      }
+
+
      
-     private void populateRequestTable(String name) 
+     
+    private void populateRequestTable(String name) 
      {
-        DefaultTableModel dtm = (DefaultTableModel) productsTable.getModel();
-        dtm.setRowCount(0);
-        for(Enterprise e:systems.getEnterpriseDirectory().getEnterpriseList())
-        {
-            if(name == String.valueOf(e))
-            {
-                 for(Products item:e.getItemsList())
-                    {
-                         Object row[] = new Object[2];
-                         row[0] = item;
-                         dtm.addRow(row);
-                     }
-            }
-      
-        }
+//        DefaultTableModel dtm = (DefaultTableModel) ProductsTable.getModel();
+//        dtm.setRowCount(0);
+//        for(Enterprise e:systems.getEnterpriseDirectory().getEnterpriseList())
+//        {
+//            if(name == String.valueOf(e))
+//            {
+//                 for(Products item:e.getItemsList())
+//                    {
+//                         Object row[] = new Object[2];
+//                         row[0] = item;
+//                         dtm.addRow(row);
+//                     }
+//            }
+////      
+//         }
     }
+    
 private void populateProducts()
 {
-    DefaultTableModel dtm = (DefaultTableModel) productsTable.getModel();
+    DefaultTableModel dtm = (DefaultTableModel) ProductsTable.getModel();
         dtm.setRowCount(0);
         for(Network net : systems.getNetworkList()){ 
             for(Enterprise e: net.getEnterpriseDirectory().getEnterpriseList()){
                  for(Products i: e.getItemsList()) {
-                    Object row[] = new Object[1];
+                     System.out.println(i.getItemName());
+                    Object row[] = new Object[2];
                     row[0] = i;
+                    row[1] = i.getItemName();
                     dtm.addRow(row);
                  }
             }
         }
-        
-       
-              
-      
-    
+//         DefaultTableModel dtm1 = (DefaultTableModel) ProductsTable.getModel();
+//       dtm1.setRowCount(0);
+//        for(Network net : systems.getNetworkList()){ 
+//            for(Enterprise e : net.getEnterpriseDirectory().getEnterpriseList()){
+//                for(Organization o: e.getOrganizationDirectory().getOrganizationList()){
+//                    for(WorkRequest request : o.getWorkQueue().getWorkRequestList()){
+//                           if(request.getReceiver() != null && request.getReceiver().getRole().toString().equals("Business.Role.DeliveryManRole")){
+//                               if(request.getStatus().toLowerCase().equals("delivered")){
+//                                   int ord = request.getRequestID();
+//                                   Object row[] = new Object[3];
+//                                        row[0] = ord;
+//                                       
+//                                        row[1] = request;
+//                                       
+//                                        dtm1.addRow(row);
+//                               }
+//                           }
+//                    }
+//                }
+//            }
+//        
+//       
+//              
+//      
+//   }
 }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -123,18 +152,18 @@ private void populateProducts()
 
         jLabel1 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        productsTable = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        RecReq = new javax.swing.JTextArea();
         Cart = new javax.swing.JButton();
         deleteFcart = new javax.swing.JButton();
         PlaceOrder = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        CartItems = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
+        proTable = new javax.swing.JScrollPane();
+        ProductsTable = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        CartItems1 = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        notes = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -154,41 +183,6 @@ private void populateProducts()
         });
         add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 100, 30));
 
-        productsTable.setFont(new java.awt.Font("SansSerif", 1, 10)); // NOI18N
-        productsTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null}
-            },
-            new String [] {
-                "Product"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(productsTable);
-        if (productsTable.getColumnModel().getColumnCount() > 0) {
-            productsTable.getColumnModel().getColumn(0).setResizable(false);
-            productsTable.getColumnModel().getColumn(1).setResizable(false);
-            productsTable.getColumnModel().getColumn(2).setResizable(false);
-        }
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, 93));
-
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Products");
@@ -197,14 +191,7 @@ private void populateProducts()
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Message:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 99, 40));
-
-        RecReq.setColumns(20);
-        RecReq.setFont(new java.awt.Font("SansSerif", 1, 10)); // NOI18N
-        RecReq.setRows(5);
-        jScrollPane2.setViewportView(RecReq);
-
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 260, 58));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 99, 40));
 
         Cart.setBackground(new java.awt.Color(255, 255, 255));
         Cart.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -214,7 +201,7 @@ private void populateProducts()
                 CartActionPerformed(evt);
             }
         });
-        add(Cart, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, -1));
+        add(Cart, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, -1, -1));
 
         deleteFcart.setBackground(new java.awt.Color(255, 255, 255));
         deleteFcart.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -224,7 +211,7 @@ private void populateProducts()
                 deleteFcartActionPerformed(evt);
             }
         });
-        add(deleteFcart, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 290, -1, 49));
+        add(deleteFcart, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, -1, 49));
 
         PlaceOrder.setBackground(new java.awt.Color(255, 255, 255));
         PlaceOrder.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -234,42 +221,63 @@ private void populateProducts()
                 PlaceOrderActionPerformed(evt);
             }
         });
-        add(PlaceOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 290, 125, 49));
+        add(PlaceOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 320, 125, 49));
 
-        CartItems.setFont(new java.awt.Font("SansSerif", 1, 10)); // NOI18N
-        CartItems.setModel(new javax.swing.table.DefaultTableModel(
+        jLabel6.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Cart Items");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 450, -1));
+
+        ProductsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Products", "Name"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        proTable.setViewportView(ProductsTable);
+
+        add(proTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 450, 150));
+
+        CartItems1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
                 {null},
                 {null},
                 {null},
                 {null}
             },
             new String [] {
-                "Product Name"
+                "Title 1"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false
-            };
+        ));
+        jScrollPane4.setViewportView(CartItems1);
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(CartItems);
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 410, 160));
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, -1, 114));
+        notes.setColumns(20);
+        notes.setRows(5);
+        jScrollPane3.setViewportView(notes);
 
-        jLabel6.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Cart Items");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 110, 450, -1));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -281,13 +289,13 @@ private void populateProducts()
 
     private void PlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlaceOrderActionPerformed
         // TODO add your handling code here:
-        if(CartItems.getRowCount() > 0 && cartCount > 0){
+        if(CartItems1.getRowCount() > 0 && cartCount > 0){
             GroceryStoreWorkRequest request = new GroceryStoreWorkRequest();
             request.setRecList(recList);
             request.setSender(acc);
             request.setStatus("Order Placed");
            
-            request.setMessage(RecReq.getText());
+            request.setMessage(notes.getText());
             Organization org = null;
         for(Network net: systems.getNetworkList()){
             for(Enterprise enter : net.getEnterpriseDirectory().getEnterpriseList()){
@@ -318,13 +326,13 @@ private void populateProducts()
 
     private void CartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CartActionPerformed
         // TODO add your handling code here:
-        int selectedRow = productsTable.getSelectedRow();
+        int selectedRow = ProductsTable.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row","Error",JOptionPane.ERROR_MESSAGE);
             return;
         }
         else{
-            Products i = (Products)productsTable.getValueAt(selectedRow,1);
+            Products i = (Products)ProductsTable.getValueAt(selectedRow,0);
             cartCount++;
            recList.add(i);
             this.total=populateTable();
@@ -334,13 +342,13 @@ private void populateProducts()
 
     private void deleteFcartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteFcartActionPerformed
         // TODO add your handling code here:
-          int selectedRow = CartItems.getSelectedRow();
+          int selectedRow = CartItems1.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please select a row","Error",JOptionPane.ERROR_MESSAGE);
             return;
         }
         else{
-        Products i = (Products)CartItems.getValueAt(selectedRow,0 );        
+        Products i = (Products)CartItems1.getValueAt(selectedRow,0 );        
       recList.remove(i);
       this.total=populateTable();
          
@@ -350,19 +358,19 @@ private void populateProducts()
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cart;
-    private javax.swing.JTable CartItems;
+    private javax.swing.JTable CartItems1;
     private javax.swing.JButton PlaceOrder;
-    private javax.swing.JTextArea RecReq;
+    private javax.swing.JTable ProductsTable;
     private javax.swing.JButton back;
     private javax.swing.JButton deleteFcart;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable productsTable;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextArea notes;
+    private javax.swing.JScrollPane proTable;
     // End of variables declaration//GEN-END:variables
 
    

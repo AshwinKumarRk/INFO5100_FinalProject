@@ -32,6 +32,7 @@ public class ManageStockJPanel extends javax.swing.JPanel {
     private EcoSystem business;
     private Organization organization;
     private Enterprise enterprise;
+    
     private boolean ValidItemName;
 
     /**
@@ -45,7 +46,13 @@ public class ManageStockJPanel extends javax.swing.JPanel {
         this.account=account;
         this.business=business;
         this.userProcessContainer=userProcessContainer;
-                populateTable();
+        populateTable();
+    }
+    private boolean namePatternCorrect(String val3){
+        Pattern p=Pattern.compile("^[a-zA-Z ]+$");
+        Matcher m=p.matcher(val3);
+        boolean b=m.matches();
+        return b;
     }
      
     /**
@@ -58,16 +65,16 @@ public class ManageStockJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Menu = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         ProductNAME = new javax.swing.JTextField();
         back = new javax.swing.JButton();
         add = new javax.swing.JButton();
         delete = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        Invalid = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Menu1 = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(68, 94, 139));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
@@ -75,32 +82,6 @@ public class ManageStockJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Products  Management");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-110, 40, 1200, 37));
-
-        Menu.setFont(new java.awt.Font("SansSerif", 1, 10)); // NOI18N
-        Menu.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null}
-            },
-            new String [] {
-                "Food Name"
-            }
-        ));
-        jScrollPane1.setViewportView(Menu);
-        if (Menu.getColumnModel().getColumnCount() > 0) {
-            Menu.getColumnModel().getColumn(0).setResizable(false);
-            Menu.getColumnModel().getColumn(1).setResizable(false);
-            Menu.getColumnModel().getColumn(2).setResizable(false);
-        }
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, 91));
 
         jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -145,12 +126,27 @@ public class ManageStockJPanel extends javax.swing.JPanel {
         });
         add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 80, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/stock.jpeg"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1200, 740));
+        Invalid.setText("jLabel2");
+        add(Invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, -1, -1));
+
+        Menu1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Title 1"
+            }
+        ));
+        jScrollPane2.setViewportView(Menu1);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 480, 180));
     }// </editor-fold>//GEN-END:initComponents
     
     private void populateTable() {
-        DefaultTableModel dtm = (DefaultTableModel) Menu.getModel();
+        DefaultTableModel dtm = (DefaultTableModel) Menu1.getModel();
         dtm.setRowCount(0);
       
         for(Products store:enterprise.getItemsList()) {
@@ -163,7 +159,7 @@ public class ManageStockJPanel extends javax.swing.JPanel {
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your handling code here:
        
-            
+       if(ValidItemName){      
         for(Products p:enterprise.getItemsList()) 
         {
           if(ProductNAME.getText().equals(p.getItemName()))
@@ -173,6 +169,11 @@ public class ManageStockJPanel extends javax.swing.JPanel {
            return;
            } 
         }
+          if(!ProductNAME.getText().matches("^[a-zA-Z0-9 ]*$")){
+            JOptionPane.showMessageDialog(null, "Invalid Item Name.","Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         if(ProductNAME.getText().equals("")||ProductNAME.getText()==null){
               JOptionPane.showMessageDialog(null, "Field(s) cannot be empty.","Error",JOptionPane.ERROR_MESSAGE);
         return;
@@ -184,6 +185,10 @@ public class ManageStockJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Item added","Success",JOptionPane.INFORMATION_MESSAGE);
         populateTable();
         ProductNAME.setText("");  
+        
+         }else{
+            JOptionPane.showMessageDialog(null, "Please enter all the required fields correctly!","Error",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_addActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -195,13 +200,13 @@ public class ManageStockJPanel extends javax.swing.JPanel {
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
-                  int selectedRow = Menu.getSelectedRow();
+        int selectedRow = Menu1.getSelectedRow();
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Select a row.","Error",JOptionPane.ERROR_MESSAGE);
             return;
         }
         else{
-            Products item = (Products)Menu.getValueAt(selectedRow, 0);
+           Products item = (Products)Menu1.getValueAt(selectedRow, 0);
            enterprise.deleteItem(item);
         JOptionPane.showMessageDialog(null, "Item deleted.","Success",JOptionPane.INFORMATION_MESSAGE);
         populateTable();
@@ -210,18 +215,27 @@ public class ManageStockJPanel extends javax.swing.JPanel {
 
     private void ProductNAMEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ProductNAMEKeyReleased
         // TODO add your handling code here:
+         if(!namePatternCorrect(ProductNAME.getText()) && !(ProductNAME.getText().isEmpty())){
+            Invalid.setVisible(false);
+            ValidItemName = false;
+           
+        }else{
+          
+            ValidItemName = true;
+          
+        }
     }//GEN-LAST:event_ProductNAMEKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Menu;
+    private javax.swing.JLabel Invalid;
+    private javax.swing.JTable Menu1;
     private javax.swing.JTextField ProductNAME;
     private javax.swing.JButton add;
     private javax.swing.JButton back;
     private javax.swing.JButton delete;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

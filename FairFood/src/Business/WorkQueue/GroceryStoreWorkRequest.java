@@ -25,16 +25,16 @@ public class GroceryStoreWorkRequest extends WorkRequest {
         return recList;
     }
 
-    public void setRecList(ArrayList<Products> cusList) {
-        this.recList = cusList;
+    public void setRecList(ArrayList<Products> recList) {
+        this.recList = recList;
     }
 
     public String getRecMessage() {
         return recMessage;
     }
 
-    public void setRecMessage(String cusMessage) {
-        this.recMessage = cusMessage;
+    public void setRecMessage(String recMessage) {
+        this.recMessage = recMessage;
     }
   
 }
