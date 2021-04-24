@@ -96,6 +96,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         back = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         success = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -184,13 +185,15 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 9, -1, 30));
 
         jLabel4.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(80, 80, 82));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("MANAGE ENTERPRISE");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 723, 30));
 
         success.setText("Only text allowed");
         add(success, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/work.jpeg"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1210, 720));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
@@ -272,6 +275,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton submit;
     private javax.swing.JLabel success;

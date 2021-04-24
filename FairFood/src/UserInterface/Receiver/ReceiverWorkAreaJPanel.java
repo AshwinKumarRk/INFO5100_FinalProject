@@ -121,8 +121,9 @@ public class ReceiverWorkAreaJPanel extends javax.swing.JPanel {
         updateBtn1 = new javax.swing.JButton();
         PlaceOrder = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(194, 155, 106));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -276,6 +277,9 @@ public class ReceiverWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1.setText("Details");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/coffee.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, -240, 1470, 840));
     }// </editor-fold>//GEN-END:initComponents
 
     private void participateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_participateActionPerformed
@@ -419,6 +423,7 @@ public class ReceiverWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JButton participate;
     private javax.swing.JComboBox statecombo;

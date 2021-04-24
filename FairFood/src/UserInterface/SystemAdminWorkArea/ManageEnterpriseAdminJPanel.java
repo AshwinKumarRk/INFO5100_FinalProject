@@ -130,8 +130,9 @@ private boolean cityPatternCorrect(String val3){
         submitJButton1 = new javax.swing.JButton();
         emailLbl = new javax.swing.JLabel();
         passwordLbl = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(60, 91, 105));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -268,6 +269,9 @@ private boolean cityPatternCorrect(String val3){
         passwordLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         passwordLbl.setText("Trdg@1");
         add(passwordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, 190, 50));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adminwork.jpeg"))); // NOI18N
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 720));
     }// </editor-fold>//GEN-END:initComponents
 
     private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
@@ -378,6 +382,7 @@ private boolean cityPatternCorrect(String val3){
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox networkJComboBox;

@@ -88,10 +88,11 @@ public class FoodAdvisorJPanel extends javax.swing.JPanel {
         Send = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         ReqTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new java.awt.CardLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(235, 217, 187));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setBackground(new java.awt.Color(80, 80, 82));
@@ -152,6 +153,9 @@ public class FoodAdvisorJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(ReqTable);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 820, 90));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/foodadcom.jpeg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, -1, 410));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -221,6 +225,7 @@ public class FoodAdvisorJPanel extends javax.swing.JPanel {
     private javax.swing.JTextArea EnterQuery;
     private javax.swing.JTable ReqTable;
     private javax.swing.JButton Send;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

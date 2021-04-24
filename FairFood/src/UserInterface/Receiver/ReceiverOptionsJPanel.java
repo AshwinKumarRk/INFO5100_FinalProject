@@ -62,8 +62,9 @@ public class ReceiverOptionsJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
         Participate = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(234, 200, 156));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         AskQA.setBackground(new java.awt.Color(255, 255, 255));
@@ -101,6 +102,9 @@ public class ReceiverOptionsJPanel extends javax.swing.JPanel {
             }
         });
         add(Participate, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 280, 90));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bbb.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, -70, 1200, 600));
     }// </editor-fold>//GEN-END:initComponents
 
     private void AskQAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AskQAActionPerformed
@@ -130,6 +134,7 @@ public class ReceiverOptionsJPanel extends javax.swing.JPanel {
     private javax.swing.JButton AskQA;
     private javax.swing.JButton Participate;
     private javax.swing.JButton back;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 
