@@ -102,14 +102,16 @@ public class EventWorkAreaJPanel extends javax.swing.JPanel {
         message = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         EventList = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 71, 43));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(80, 80, 82));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CUSTOMER DETAILS");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1200, 39));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1200, 39));
 
         interestedList.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
         interestedList.setModel(new javax.swing.table.DefaultTableModel(
@@ -141,7 +143,7 @@ public class EventWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(interestedList);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 675, 91));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 675, 91));
 
         done.setBackground(new java.awt.Color(255, 255, 255));
         done.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -151,16 +153,17 @@ public class EventWorkAreaJPanel extends javax.swing.JPanel {
                 doneActionPerformed(evt);
             }
         });
-        add(done, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 540, -1, 40));
+        add(done, new org.netbeans.lib.awtextra.AbsoluteConstraints(438, 610, 340, 40));
 
-        jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 26)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Name:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 107, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, 107, 30));
 
         NameField.setEditable(false);
         NameField.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
-        add(NameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 150, 30));
+        add(NameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 150, 30));
 
         view.setBackground(new java.awt.Color(255, 255, 255));
         view.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -170,26 +173,31 @@ public class EventWorkAreaJPanel extends javax.swing.JPanel {
                 viewActionPerformed(evt);
             }
         });
-        add(view, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, 138, 45));
+        add(view, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 330, 45));
 
-        jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 26)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Message:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 400, -1, -1));
 
         message.setColumns(20);
         message.setRows(5);
         jScrollPane2.setViewportView(message);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 190, -1));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 190, -1));
 
-        jLabel4.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("PT Serif Caption", 1, 26)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Send Event List:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 470, 130, 50));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 480, 240, 50));
 
         EventList.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         EventList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Event List" }));
-        add(EventList, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 150, 30));
+        add(EventList, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, 150, 30));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/event.jpeg"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 740));
     }// </editor-fold>//GEN-END:initComponents
 
     private void doneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doneActionPerformed
@@ -229,8 +237,8 @@ public class EventWorkAreaJPanel extends javax.swing.JPanel {
 
     
     public void sendEmail(String email, String chart){
-		final String password = "ThankyouMail@12345";
-		String fromEmail = "thankyou@gmail.com";
+		final String password = "147258369tr";
+		String fromEmail = "rtrupti1998@gmail.com";
 		String toEmail = email;
 		Properties properties = new Properties();
 		properties.put("mail.smtp.auth", "true");
@@ -279,6 +287,7 @@ public class EventWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea message;
