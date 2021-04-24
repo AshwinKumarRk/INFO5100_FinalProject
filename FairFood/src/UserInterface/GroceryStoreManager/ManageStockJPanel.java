@@ -73,8 +73,9 @@ public class ManageStockJPanel extends javax.swing.JPanel {
         Invalid = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         Menu1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(243, 223, 198));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
@@ -143,6 +144,10 @@ public class ManageStockJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(Menu1);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 480, 180));
+
+        jLabel2.setBackground(new java.awt.Color(243, 223, 198));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/beige.jpeg"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-690, 0, 1870, 750));
     }// </editor-fold>//GEN-END:initComponents
     
     private void populateTable() {
@@ -235,6 +240,7 @@ public class ManageStockJPanel extends javax.swing.JPanel {
     private javax.swing.JButton back;
     private javax.swing.JButton delete;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
