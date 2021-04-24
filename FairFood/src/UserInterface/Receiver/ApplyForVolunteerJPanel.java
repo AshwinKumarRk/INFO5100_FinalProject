@@ -48,13 +48,14 @@ public class ApplyForVolunteerJPanel extends javax.swing.JPanel {
         events = new javax.swing.JButton();
         donate = new javax.swing.JButton();
         rightJPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new java.awt.CardLayout());
 
         jSplitPane1.setDividerLocation(80);
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(85, 190, 229));
 
         back.setBackground(new java.awt.Color(255, 255, 255));
         back.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -106,13 +107,17 @@ public class ApplyForVolunteerJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jSplitPane1.setTopComponent(jPanel1);
 
-        rightJPanel.setBackground(new java.awt.Color(255, 255, 255));
+        rightJPanel.setBackground(new java.awt.Color(85, 190, 229));
         rightJPanel.setLayout(new java.awt.CardLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volunteer.jpeg"))); // NOI18N
+        rightJPanel.add(jLabel1, "card2");
+
         jSplitPane1.setRightComponent(rightJPanel);
 
         add(jSplitPane1, "card2");
@@ -145,6 +150,7 @@ public class ApplyForVolunteerJPanel extends javax.swing.JPanel {
     private javax.swing.JButton back;
     private javax.swing.JButton donate;
     private javax.swing.JButton events;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel rightJPanel;

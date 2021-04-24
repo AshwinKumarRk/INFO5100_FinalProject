@@ -90,8 +90,9 @@ public class FoodSafetyOfficerJPanel extends javax.swing.JPanel {
         Send = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         complaints = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(237, 235, 216));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setBackground(new java.awt.Color(80, 80, 82));
@@ -155,6 +156,9 @@ public class FoodSafetyOfficerJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(complaints);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 820, 90));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/officer.jpeg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 600, 380));
     }// </editor-fold>//GEN-END:initComponents
 
     private void SendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendActionPerformed
@@ -223,6 +227,7 @@ public class FoodSafetyOfficerJPanel extends javax.swing.JPanel {
     private javax.swing.JTextArea Message;
     private javax.swing.JButton Send;
     private javax.swing.JTable complaints;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;

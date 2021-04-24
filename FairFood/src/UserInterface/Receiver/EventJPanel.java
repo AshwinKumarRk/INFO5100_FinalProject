@@ -86,8 +86,9 @@ public class EventJPanel extends javax.swing.JPanel {
         req = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         names = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(237, 223, 207));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setBackground(new java.awt.Color(80, 80, 82));
@@ -145,6 +146,10 @@ public class EventJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(names);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 760, 90));
+
+        jLabel1.setBackground(new java.awt.Color(243, 223, 198));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eventspart.jpeg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 500, 440));
     }// </editor-fold>//GEN-END:initComponents
 
     private void reqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reqActionPerformed
@@ -210,6 +215,7 @@ public class EventJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Message;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;

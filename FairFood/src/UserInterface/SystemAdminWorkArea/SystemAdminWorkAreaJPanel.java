@@ -105,14 +105,17 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         ent = new javax.swing.JButton();
         admin = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
+        jSplitPane.setBackground(new java.awt.Color(13, 66, 151));
         jSplitPane.setDividerLocation(90);
         jSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(13, 66, 151));
 
+        jTree.setBackground(new java.awt.Color(13, 66, 151));
         jTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
             public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
                 jTreeValueChanged(evt);
@@ -121,9 +124,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTree);
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Selected Node:");
 
         selected.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        selected.setForeground(new java.awt.Color(255, 255, 255));
         selected.setText("<View_selected_node>");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -184,9 +189,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 320, 100));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(91, 172, 244));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 60));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/oo.jpeg"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 500));
 
         jSplitPane.setRightComponent(jPanel2);
 
@@ -228,6 +236,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton admin;
     private javax.swing.JButton ent;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

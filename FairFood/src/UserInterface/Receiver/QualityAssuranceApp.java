@@ -49,13 +49,14 @@ public class QualityAssuranceApp extends javax.swing.JPanel {
         FoodAdvisor = new javax.swing.JButton();
         back = new javax.swing.JButton();
         rightJPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new java.awt.CardLayout());
 
         jSplitPane1.setDividerLocation(80);
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(151, 120, 80));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         FoodSafety.setFont(new java.awt.Font("PT Serif Caption", 1, 18)); // NOI18N
@@ -90,6 +91,11 @@ public class QualityAssuranceApp extends javax.swing.JPanel {
 
         rightJPanel.setBackground(new java.awt.Color(255, 255, 255));
         rightJPanel.setLayout(new java.awt.CardLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/aaa.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        rightJPanel.add(jLabel1, "card2");
+
         jSplitPane1.setRightComponent(rightJPanel);
 
         add(jSplitPane1, "card2");
@@ -122,6 +128,7 @@ public class QualityAssuranceApp extends javax.swing.JPanel {
     private javax.swing.JButton FoodAdvisor;
     private javax.swing.JButton FoodSafety;
     private javax.swing.JButton back;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel rightJPanel;

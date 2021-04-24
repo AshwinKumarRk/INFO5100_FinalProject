@@ -86,8 +86,9 @@ public class DonationRequestJPanel extends javax.swing.JPanel {
         req = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         ReqTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(243, 223, 198));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setBackground(new java.awt.Color(80, 80, 82));
@@ -147,6 +148,9 @@ public class DonationRequestJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(ReqTable);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 750, 90));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/beige.jpeg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-830, 10, 2030, 600));
     }// </editor-fold>//GEN-END:initComponents
 
     private void reqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reqActionPerformed
@@ -213,6 +217,7 @@ public class DonationRequestJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ReqTable;
     private javax.swing.JTextArea Requests;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;

@@ -73,8 +73,9 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         delete = new javax.swing.JButton();
         label = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(5, 141, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -144,7 +145,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 79, 404, 91));
 
         jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(80, 80, 82));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("MANAGE NETWORK");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 11, 723, 30));
@@ -161,6 +161,9 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         label.setText("Only text allowed");
         add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/kk.jpeg"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-880, 0, 2090, 950));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
@@ -216,6 +219,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private javax.swing.JButton back;
     private javax.swing.JButton delete;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label;
