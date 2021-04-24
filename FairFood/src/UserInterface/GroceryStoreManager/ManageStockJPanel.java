@@ -87,7 +87,7 @@ public class ManageStockJPanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Item Name:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 100, 30));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 100, 30));
 
         ProductNAME.setMinimumSize(new java.awt.Dimension(7, 25));
         ProductNAME.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -95,7 +95,7 @@ public class ManageStockJPanel extends javax.swing.JPanel {
                 ProductNAMEKeyReleased(evt);
             }
         });
-        add(ProductNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 150, 30));
+        add(ProductNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 150, 30));
 
         back.setBackground(new java.awt.Color(255, 255, 255));
         back.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -115,7 +115,7 @@ public class ManageStockJPanel extends javax.swing.JPanel {
                 addActionPerformed(evt);
             }
         });
-        add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 100, 40));
+        add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 100, 40));
 
         delete.setBackground(new java.awt.Color(255, 255, 255));
         delete.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -125,10 +125,10 @@ public class ManageStockJPanel extends javax.swing.JPanel {
                 deleteActionPerformed(evt);
             }
         });
-        add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 80, 40));
+        add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 80, 40));
 
-        Invalid.setText("jLabel2");
-        add(Invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, -1, -1));
+        Invalid.setText("Invalid");
+        add(Invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 300, -1, -1));
 
         Menu1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -143,7 +143,7 @@ public class ManageStockJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(Menu1);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 480, 180));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 480, 180));
 
         jLabel2.setBackground(new java.awt.Color(243, 223, 198));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/beige.jpeg"))); // NOI18N
