@@ -88,7 +88,9 @@ public class DonationWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         Reply = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(109, 180, 176));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ReqTable.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -129,16 +131,16 @@ public class DonationWorkAreaJPanel extends javax.swing.JPanel {
                 AcceptActionPerformed(evt);
             }
         });
-        add(Accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, -1, 40));
+        add(Accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 440, 300, 40));
 
-        jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 26)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Name:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 107, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 300, 200, 30));
 
         Name.setEditable(false);
         Name.setFont(new java.awt.Font("SansSerif", 1, 10)); // NOI18N
-        add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 150, 30));
+        add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 160, 40));
 
         Show.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
         Show.setText("View Details");
@@ -147,13 +149,13 @@ public class DonationWorkAreaJPanel extends javax.swing.JPanel {
                 ShowActionPerformed(evt);
             }
         });
-        add(Show, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 138, 45));
+        add(Show, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 240, 290, 45));
 
-        jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(80, 80, 82));
+        jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("INTERESTED PERSON DETAILS");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 70, 1200, 39));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 40, 1200, 39));
 
         Reply.setColumns(20);
         Reply.setFont(new java.awt.Font("SansSerif", 1, 10)); // NOI18N
@@ -162,10 +164,13 @@ public class DonationWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 26)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Message:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 80, 30));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 170, 30));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/foodDonation.jpeg"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 680));
     }// </editor-fold>//GEN-END:initComponents
 
     private void AcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcceptActionPerformed
@@ -219,6 +224,7 @@ public class DonationWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
