@@ -90,6 +90,7 @@ public class FoodAdvisorWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         reply = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -121,7 +122,7 @@ public class FoodAdvisorWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(RecList);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 112, 675, 91));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 675, 91));
 
         Send.setBackground(new java.awt.Color(255, 255, 255));
         Send.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -131,16 +132,17 @@ public class FoodAdvisorWorkAreaJPanel extends javax.swing.JPanel {
                 SendActionPerformed(evt);
             }
         });
-        add(Send, new org.netbeans.lib.awtextra.AbsoluteConstraints(515, 450, 130, 40));
+        add(Send, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 510, 340, 40));
 
-        jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 26)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Name:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 107, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 107, 30));
 
         Name.setEditable(false);
         Name.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
-        add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 190, 30));
+        add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 190, 30));
 
         View.setBackground(new java.awt.Color(255, 255, 255));
         View.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -150,24 +152,28 @@ public class FoodAdvisorWorkAreaJPanel extends javax.swing.JPanel {
                 ViewActionPerformed(evt);
             }
         });
-        add(View, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 138, 45));
+        add(View, new org.netbeans.lib.awtextra.AbsoluteConstraints(438, 220, 340, 45));
 
-        jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(80, 80, 82));
+        jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Receiver Details");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1209, 39));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1209, 39));
 
-        jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 26)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Message:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 160, 30));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 160, 30));
 
         reply.setColumns(20);
         reply.setRows(5);
         jScrollPane2.setViewportView(reply);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, -1, -1));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/foodadv.png"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1590, 980));
     }// </editor-fold>//GEN-END:initComponents
 
     private void ViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewActionPerformed
@@ -217,6 +223,7 @@ public class FoodAdvisorWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea reply;
