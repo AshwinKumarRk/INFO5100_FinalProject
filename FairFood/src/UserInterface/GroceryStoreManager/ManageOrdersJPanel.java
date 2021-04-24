@@ -84,8 +84,9 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         orders1 = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         place1 = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(243, 223, 198));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
@@ -177,6 +178,10 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jScrollPane4.setViewportView(place1);
 
         add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 490, 90));
+
+        jLabel3.setBackground(new java.awt.Color(243, 223, 198));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/beige.jpeg"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-550, 0, 1570, 750));
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
@@ -269,6 +274,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private javax.swing.JButton assign;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable orders1;

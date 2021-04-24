@@ -7,6 +7,7 @@ package UserInterface.Receiver;
 
 import Business.Receiver.Receiver;
 import Business.EcoSystem;
+import Business.Enterprise.CommunityFridge;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
@@ -120,6 +121,7 @@ public class ReceiverWorkAreaJPanel extends javax.swing.JPanel {
         PassLabel = new javax.swing.JLabel();
         updateBtn1 = new javax.swing.JButton();
         PlaceOrder = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -150,7 +152,7 @@ public class ReceiverWorkAreaJPanel extends javax.swing.JPanel {
                 participateActionPerformed(evt);
             }
         });
-        add(participate, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, -1, 51));
+        add(participate, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, -1, 51));
 
         update.setBackground(new java.awt.Color(255, 102, 0));
         update.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -274,6 +276,14 @@ public class ReceiverWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(PlaceOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 520, 106, 51));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, 130, 60));
 
         jLabel1.setText("Details");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, -1, -1));
@@ -406,6 +416,14 @@ public class ReceiverWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_statecomboActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        CommunityFridgeJPanel placeOrder =new CommunityFridgeJPanel(userProcessContainer,receiver,system,userAccount,enterprise, network);
+        userProcessContainer.add("CommunityFridgeJPanel",placeOrder);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Address;
@@ -417,6 +435,7 @@ public class ReceiverWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton Save;
     private javax.swing.JTextField ZipCode;
     private javax.swing.JLabel ZipLabel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

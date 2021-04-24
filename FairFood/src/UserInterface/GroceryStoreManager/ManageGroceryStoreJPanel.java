@@ -43,6 +43,7 @@ public class ManageGroceryStoreJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         stock = new javax.swing.JButton();
         orders = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,6 +74,10 @@ public class ManageGroceryStoreJPanel extends javax.swing.JPanel {
             }
         });
         add(orders, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 170, 90));
+
+        jLabel2.setBackground(new java.awt.Color(243, 223, 198));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/beige.jpeg"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-370, 0, 1570, 750));
     }// </editor-fold>//GEN-END:initComponents
 
     private void stockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockActionPerformed
@@ -93,6 +98,7 @@ public class ManageGroceryStoreJPanel extends javax.swing.JPanel {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton orders;
     private javax.swing.JButton stock;
     // End of variables declaration//GEN-END:variables
