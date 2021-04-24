@@ -119,9 +119,8 @@ private void populateNetworkComboBox() {
         passwordLbl = new javax.swing.JLabel();
         Zip = new javax.swing.JLabel();
         EmailAldExist = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(239, 227, 252));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         NameF.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
@@ -166,14 +165,14 @@ private void populateNetworkComboBox() {
         });
         add(EmailF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 190, 30));
 
-        submitBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        submitBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         submitBtn.setText("Submit");
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitBtnActionPerformed(evt);
             }
         });
-        add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 190, 70));
+        add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, 100, 50));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -186,15 +185,14 @@ private void populateNetworkComboBox() {
         jLabel1.setText("CUSTOMER REGISTRATION");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-110, 10, 1210, 50));
 
-        resetBtn.setBackground(new java.awt.Color(239, 227, 252));
-        resetBtn.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        resetBtn.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         resetBtn.setText("Reset");
         resetBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetBtnActionPerformed(evt);
             }
         });
-        add(resetBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 190, 70));
+        add(resetBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, 100, 50));
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -270,9 +268,6 @@ private void populateNetworkComboBox() {
         EmailAldExist.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EmailAldExist.setText("email already exists");
         add(EmailAldExist, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 160, 20));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/registration.png"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 1200, 600));
     }// </editor-fold>//GEN-END:initComponents
 
     private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBtnActionPerformed
@@ -444,7 +439,6 @@ private void populateNetworkComboBox() {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel passwordLbl;
     private javax.swing.JButton resetBtn;

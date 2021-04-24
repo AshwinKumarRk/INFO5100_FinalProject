@@ -11,7 +11,7 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import UserInterface.FoodAdvisor.FoodAdvisorWorkAreaJPanel;
+import UserInterface.FoodSafetyOfficer.FoodSafetyOfficerWorkAreaJPanel;
 
 /**
  *
@@ -21,7 +21,7 @@ public class FoodSafetyOfficer extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, Enterprise enterprise, Organization organization, UserAccount account, EcoSystem business, Network network) {
-        return new FoodAdvisorWorkAreaJPanel(userProcessContainer, enterprise, organization, account, business, network);
+        return new FoodSafetyOfficerWorkAreaJPanel(userProcessContainer, enterprise, organization, account, business, network);
     }
     
 }

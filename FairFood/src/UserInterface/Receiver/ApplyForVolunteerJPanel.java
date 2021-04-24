@@ -48,15 +48,13 @@ public class ApplyForVolunteerJPanel extends javax.swing.JPanel {
         events = new javax.swing.JButton();
         donate = new javax.swing.JButton();
         rightJPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 161, 184));
         setLayout(new java.awt.CardLayout());
 
         jSplitPane1.setDividerLocation(80);
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        jPanel1.setBackground(new java.awt.Color(0, 161, 184));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         back.setBackground(new java.awt.Color(255, 255, 255));
         back.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -88,33 +86,33 @@ public class ApplyForVolunteerJPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addContainerGap()
                 .addComponent(back)
-                .addGap(286, 286, 286)
+                .addGap(240, 240, 240)
                 .addComponent(donate, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(237, 237, 237)
+                .addGap(137, 137, 137)
                 .addComponent(events, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(618, Short.MAX_VALUE))
+                .addContainerGap(351, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(donate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(events, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(events, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(donate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jSplitPane1.setTopComponent(jPanel1);
 
         rightJPanel.setBackground(new java.awt.Color(255, 255, 255));
         rightJPanel.setLayout(new java.awt.CardLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volunteer.jpeg"))); // NOI18N
-        rightJPanel.add(jLabel1, "card2");
-
         jSplitPane1.setRightComponent(rightJPanel);
 
         add(jSplitPane1, "card2");
@@ -147,7 +145,6 @@ public class ApplyForVolunteerJPanel extends javax.swing.JPanel {
     private javax.swing.JButton back;
     private javax.swing.JButton donate;
     private javax.swing.JButton events;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel rightJPanel;

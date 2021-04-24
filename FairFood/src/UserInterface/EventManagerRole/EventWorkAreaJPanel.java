@@ -102,9 +102,7 @@ public class EventWorkAreaJPanel extends javax.swing.JPanel {
         message = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         EventList = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(205, 71, 42));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -192,9 +190,6 @@ public class EventWorkAreaJPanel extends javax.swing.JPanel {
         EventList.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
         EventList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Event List" }));
         add(EventList, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 150, 30));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/event.jpeg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1370, 930));
     }// </editor-fold>//GEN-END:initComponents
 
     private void doneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doneActionPerformed
@@ -284,7 +279,6 @@ public class EventWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea message;
