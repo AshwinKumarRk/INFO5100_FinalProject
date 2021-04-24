@@ -65,8 +65,9 @@ public class ManageStockJPanel extends javax.swing.JPanel {
         back = new javax.swing.JButton();
         add = new javax.swing.JButton();
         delete = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(68, 94, 139));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
@@ -143,6 +144,9 @@ public class ManageStockJPanel extends javax.swing.JPanel {
             }
         });
         add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 80, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/stock.jpeg"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1200, 740));
     }// </editor-fold>//GEN-END:initComponents
     
     private void populateTable() {
@@ -216,6 +220,7 @@ public class ManageStockJPanel extends javax.swing.JPanel {
     private javax.swing.JButton back;
     private javax.swing.JButton delete;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

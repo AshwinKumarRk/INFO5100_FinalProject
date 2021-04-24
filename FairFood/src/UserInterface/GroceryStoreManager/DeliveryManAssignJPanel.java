@@ -75,8 +75,9 @@ public class DeliveryManAssignJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         DeliveryMan = new javax.swing.JComboBox<>();
         Assign = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(255, 237, 205));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
@@ -113,6 +114,9 @@ public class DeliveryManAssignJPanel extends javax.swing.JPanel {
             }
         });
         add(Assign, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, 140, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deliveryassign.jpeg"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 600));
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
@@ -143,6 +147,7 @@ public class DeliveryManAssignJPanel extends javax.swing.JPanel {
     private javax.swing.JButton Back;
     private javax.swing.JComboBox<String> DeliveryMan;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 

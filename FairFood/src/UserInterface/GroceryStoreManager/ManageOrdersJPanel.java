@@ -84,8 +84,9 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         place = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(113, 114, 234));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         orders.setFont(new java.awt.Font("SansSerif", 1, 11)); // NOI18N
@@ -127,9 +128,10 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 700, 91));
 
         jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Managing Orders");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-150, 20, 1200, 37));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-150, 10, 1200, 37));
 
         Back.setBackground(new java.awt.Color(255, 102, 0));
         Back.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -204,12 +206,15 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             place.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 478, 93));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 478, 93));
 
         jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Order Details");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 452, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 452, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ordercart.jpeg"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-420, -600, 1720, 1130));
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
@@ -302,6 +307,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private javax.swing.JButton assign;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable orders;
