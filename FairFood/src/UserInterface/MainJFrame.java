@@ -90,8 +90,9 @@ private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
         jLabel4.setText("SignUp Here");
         LeftJPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 204, -1));
 
-        login.setBackground(new java.awt.Color(255, 102, 0));
+        login.setBackground(new java.awt.Color(101, 67, 33));
         login.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        login.setForeground(new java.awt.Color(255, 255, 255));
         login.setText("Log in");
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,8 +101,9 @@ private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
         });
         LeftJPanel.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 148, 49));
 
-        signup.setBackground(new java.awt.Color(255, 102, 0));
+        signup.setBackground(new java.awt.Color(101, 67, 33));
         signup.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        signup.setForeground(new java.awt.Color(255, 255, 255));
         signup.setText("Sign Up");
         signup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,8 +112,9 @@ private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
         });
         LeftJPanel.add(signup, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 580, 149, 49));
 
-        logout.setBackground(new java.awt.Color(255, 102, 0));
+        logout.setBackground(new java.awt.Color(101, 67, 33));
         logout.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 255, 255));
         logout.setText("Log Out");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -85,6 +85,7 @@ public class FoodSafetyOfficerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         Reply = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -128,16 +129,16 @@ public class FoodSafetyOfficerWorkAreaJPanel extends javax.swing.JPanel {
                 SendActionPerformed(evt);
             }
         });
-        add(Send, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, -1, 40));
+        add(Send, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 540, 370, 40));
 
-        jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("PT Serif Caption", 1, 25)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Name:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 107, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, 160, 30));
 
         Name.setEditable(false);
         Name.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
-        add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 190, 30));
+        add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 340, 190, 30));
 
         View.setBackground(new java.awt.Color(255, 255, 255));
         View.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
@@ -147,24 +148,27 @@ public class FoodSafetyOfficerWorkAreaJPanel extends javax.swing.JPanel {
                 ViewActionPerformed(evt);
             }
         });
-        add(View, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 138, 45));
+        add(View, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 360, 45));
 
         jLabel1.setFont(new java.awt.Font("PT Serif Caption", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(80, 80, 82));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Receiver Details");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1209, 39));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1209, 39));
 
-        jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 25)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Message:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 100, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 160, -1));
 
         Reply.setColumns(20);
         Reply.setRows(5);
         jScrollPane2.setViewportView(Reply);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, -1, -1));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/foodsafety.png"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-370, 0, 1790, 720));
     }// </editor-fold>//GEN-END:initComponents
 
     private void ViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewActionPerformed
@@ -213,6 +217,7 @@ public class FoodSafetyOfficerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable table;

@@ -45,7 +45,7 @@ public class EventWorkAreaJPanel extends javax.swing.JPanel {
      */   
     JPanel userProcessContainer;
     UserAccount account;
-    CommunityFridgeOrganization nutritionOrganisation;
+    CommunityFridgeOrganization communityFridgeOrganisation;
     Enterprise enterprise;
     EcoSystem ecosystem;
     Network network;
